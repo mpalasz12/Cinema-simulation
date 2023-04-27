@@ -22,6 +22,8 @@
 
 ### Klasy reprezentujące osoby.
 
+> Główna klasa ``Worker``, od której będą wychodzić klasy dotyczące poszczególnych pracowników
+
 > Będą to klasy takie jak ``Client`` oraz ``Employee`` (i dziedziczący po niej konkretni pracownicy), klienci będą kupować bilety i oglądać filmy, pracownicy z kolei będą pracować w kinie na kasach biletowych, stoiskach z jedzeniem itd.
 
 ### Klasa ``MovieRoom``
