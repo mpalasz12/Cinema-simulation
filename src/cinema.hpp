@@ -1,7 +1,9 @@
 #pragma once
 #include <string>
 #include <vector>
+#include <memory>
 #include "register.hpp"
+#include "data.h"
 
 
 enum class employeeType {
@@ -10,7 +12,6 @@ enum class employeeType {
 	foodSeller,
 	janitor,
 };
-
 /*! TODO: add class fields related to other cinema classes
  *  \todo add class fields related to other cinema classes
  */
@@ -19,6 +20,7 @@ class Cinema {
 	private:
 		std::string name;
 		Register employees;
+		DataBase moviesInfo;
 	public:
 		Cinema(std::string name);
 
