@@ -2,6 +2,7 @@
 #include<iostream>
 #include <algorithm>
 #include "movie.h"
+#include "time.h"
 
 Movie::Movie(std::string newName, double newPrice,
 unsigned int newDuration, unsigned short int newFrequency):
@@ -26,27 +27,39 @@ unsigned short int Movie::getFrequency()
 {
     return frequency;
 }
-std::vector<std::string>::iterator Movie::findElement(std::string element)
+unsigned int Movie::getHowManyTimes()
+{
+    return times.size();
+}
+std::vector<Time>::iterator Movie::findElement(Time element)
 {
     for (auto it = times.begin(); it != times.end(); ++it) 
     {
-        if (*it == element) {
+        if (it->getDay() == element.getDay() && it->getHour() == element.getHour())
+        {
             return it;
         }
     }
     return times.end();
 }
-void Movie::addTimes(std::string newTime)
+void Movie::addTimes(weekDay newDay, std::string newHour)
 {
-    if(times.end() == findElement(newTime))
+    Time time(newDay, newHour);
+    if(times.end() == findElement(time))
     {
+        Time newTime(newDay, newHour);
         times.push_back(newTime);
     }
     sortTimes();
 }
 void Movie::sortTimes()
 {
-    std::sort(times.begin(), times.end());
+    std::sort(times.begin(), times.end(), 
+    [](Time& time1, Time& time2) 
+    {
+        return time1.getDay() < time2.getDay();
+    });
+
 }
 double Movie::calculate_price() const
 {
@@ -61,11 +74,11 @@ std::ostream& operator<<(std::ostream& os, const Movie& movie)
     os <<"Movies name: " << movie.name << std::endl
     << "Movies price: " << movie.calculate_price() << std::endl
     << "Movies length: " << movie.duration << " minutes" << std::endl
-    << "Movie is played " << movie.calculate_frequency() << " times a day" << std::endl
+    << "Movie is played " << movie.calculate_frequency() << " times a week" << std::endl
     << "Movies starting hours: " << std::endl;
-    for(const auto& element : movie.times)
+    for (const Time& time : movie.times)
     {
-        os << element << std::endl;
+        os << " " << time;
     }
     return os;
 }

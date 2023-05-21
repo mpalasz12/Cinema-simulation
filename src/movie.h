@@ -1,7 +1,7 @@
 #include<string>
 #include<vector>
+#include "time.h"
 #pragma once
-
 
 class Movie
 {
@@ -10,7 +10,7 @@ protected:
     double price;
     unsigned int duration;
     unsigned short int frequency;
-    std::vector<std::string> times;
+    std::vector<Time> times;
 
 public:
     Movie(std::string newName, double newPrice, unsigned int newDuration,
@@ -20,8 +20,9 @@ public:
     double getPrice();
     unsigned int getDuration();
     unsigned short int getFrequency();
-    std::vector<std::string>::iterator findElement(std::string element);
-    void addTimes(std::string newTime);
+    unsigned int getHowManyTimes();
+    std::vector<Time>::iterator findElement(Time element);
+    void addTimes(weekDay newDay, std::string newHour);
     void sortTimes();
 
     virtual double calculate_price() const;
