@@ -4,6 +4,7 @@
 #include <string>
 #include <stdexcept>
 #include "worker.hpp"
+#include "enums.hpp"
 
 class WorkerNotFoundException : public std::invalid_argument {
 	public:
