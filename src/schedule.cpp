@@ -2,6 +2,7 @@
 #include <vector>
 #include <algorithm>
 #include "schedule.hpp"
+#include "enums.hpp"
 #include "day.hpp"
 #include <map>
 

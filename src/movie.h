@@ -22,7 +22,7 @@ public:
     unsigned short int getFrequency();
     unsigned int getHowManyTimes();
     std::vector<Time>::iterator findElement(Time element);
-    void addTimes(weekDay newDay, std::string newHour);
+    void addTimes(Weekday newDay, std::string newHour);
     void sortTimes();
 
     virtual double calculate_price() const;

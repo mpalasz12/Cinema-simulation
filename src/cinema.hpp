@@ -4,14 +4,9 @@
 #include <memory>
 #include "register.hpp"
 #include "data.h"
+#include "enums.hpp"
 
 
-enum class employeeType {
-	worker,
-	ticketSeller,
-	foodSeller,
-	janitor,
-};
 /*! TODO: add class fields related to other cinema classes
  *  \todo add class fields related to other cinema classes
  */

@@ -8,6 +8,7 @@
 #include "../../src/worker.hpp"
 #include "../../src/schedule.hpp"
 #include "../../src/register.hpp"
+#include "../../src/enums.hpp"
 
 TEST_CASE("Daily schedule tests", "[day]") {
 	Day day(10, 18);
