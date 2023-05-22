@@ -10,3 +10,10 @@ enum class Weekday {
 	Sunday,
 };
 
+enum class employeeType {
+	worker,
+	ticketSeller,
+	foodSeller,
+	janitor,
+};
+
