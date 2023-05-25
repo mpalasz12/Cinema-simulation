@@ -5,6 +5,7 @@
 #include "cinema.hpp"
 #include "register.hpp"
 #include "schedule.hpp"
+#include "simlog.hpp"
 
 // tego jeszcze nie robie bo by wypadalo zeby byly wszystkie klasy zwiazane z kinem
 
@@ -12,7 +13,7 @@ class Simulation {
 	private:
 		Cinema cinema;
 		unsigned currentStep;
-		std::vector<std::string> simulationLog;
+		SimLog simLog;
 		std::vector<std::string>::iterator findLog;
 		unsigned short time;
 	public:
@@ -25,7 +26,8 @@ class Simulation {
 		void startSimulation();
 		void runStep();
 
+		void prepareWeek();
+
 		void addToLog(std::string log);
-		void removeFromLog(std::string log);
-		void clearLog();
+		std::string getStepLog();
 };

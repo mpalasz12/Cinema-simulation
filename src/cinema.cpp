@@ -12,6 +12,24 @@ void Cinema::setName(std::string newName) {
 	name = newName;
 }
 
+unsigned short Cinema::getOpeningHour() {
+	return openingHour;
+}
+
+unsigned short Cinema::getClosingHour() {
+	return closingHour;
+}
+
+void Cinema::setOpeningHour(unsigned short hour) {
+	openingHour = hour;
+}
+
+void Cinema::setClosingHour(unsigned short hour) {
+	closingHour = hour;
+}
+
+
+
 void Cinema::addEmployee(std::string name, employeeType type, unsigned short hours) {
 	switch(type) {
 		case employeeType::worker:
@@ -32,3 +50,5 @@ void Cinema::addEmployee(std::string name, employeeType type, unsigned short hou
 Register Cinema::getRegister() {
 	return getRegister();
 }
+
+

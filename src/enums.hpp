@@ -17,3 +17,8 @@ enum class employeeType {
 	janitor,
 };
 
+enum class WorkplaceType {
+	ticketCounter,
+	janitorialCloset,
+	foodCounter,
+};
