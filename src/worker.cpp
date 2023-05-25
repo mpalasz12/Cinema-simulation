@@ -3,6 +3,7 @@
 #include <algorithm>
 #include "schedule.hpp"
 #include "worker.hpp"
+#include "enums.hpp"
 
 const int MIN_WAGE = 18;
 const int SELLER_WAGE = 20;
@@ -11,6 +12,7 @@ const int JANITOR_WAGE = 19;
 //WORKER
 
 Worker::Worker(std::string name, unsigned short hours): name(name), hours(hours) {
+	type = employeeType::worker;
 	wage = MIN_WAGE;
 	salary = 0;
 	hours = 0;
@@ -30,6 +32,10 @@ unsigned Worker::getHours() {
 
 std::string Worker::getName() {
 	return name;
+}
+
+employeeType Worker::getType() {
+	return type;
 }
 
 bool Worker::hasSchedule() {
@@ -114,6 +120,7 @@ std::ostream& operator<<(std::ostream& os, Worker worker) {
 
 TicketSeller::TicketSeller(std::string name, unsigned short hours, unsigned short cashID) :
 	Worker(name, hours), cashID(cashID) {
+	type = employeeType::ticketSeller;
 	wage = SELLER_WAGE;
 	salary = 0;
 }
@@ -145,6 +152,7 @@ void TicketSeller::assembleSchedule(unsigned int time) {
 // -----------
 
 FoodSeller::FoodSeller(std::string name, unsigned short hours) : Worker(name, hours) {
+	type = employeeType::foodSeller;
 	wage = SELLER_WAGE;
 	salary = 0;
 }
@@ -180,6 +188,7 @@ void FoodSeller::assembleSchedule(unsigned int time) {
 // -----------
 
 Janitor::Janitor(std::string name, unsigned short hours) : Worker(name, hours)  {
+	type = employeeType::janitor;
 	wage = JANITOR_WAGE;
 	salary = 0;
 }

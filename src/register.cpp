@@ -122,6 +122,34 @@ std::string Register::workersString() {
 	return ss.str();
 }
 
+
+std::vector<std::string> Register::getWorkerNamesByType(employeeType type) {
+	std::vector<std::string> resultVec;
+	std::for_each(workers.begin(), workers.end(), 
+			[type](std::unique_ptr<Worker>& worker, auto& resultVec) {
+				if (worker -> getType() == type) {
+					resultVec.push_back(worker -> getName());
+				}
+			});
+	return resultVec;
+}
+
+std::vector<std::string> Register::getWorkerByTypeAndAvailability(employeeType type, Weekday day) {
+	std::vector<std::string> resultVec;
+	std::for_each(workers.begin(), workers.end(), 
+			[type, day](std::unique_ptr<Worker>& worker, auto& resultVec) {
+				if ((worker -> getType() == type) && (worker -> isAvailable(day))){
+					resultVec.push_back(worker -> getName());
+				}
+			});
+	return resultVec;
+}
+
+/*! TODO: tests for getWorkerNamesByType
+ *  \todo tests for getWorkerNamesByType
+ */
+
+
 std::ostream& operator <<(std::ostream& os, Register& reg) {
 	os << reg.workersString();
 	return os;

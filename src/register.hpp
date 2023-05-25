@@ -33,9 +33,12 @@ class Register {
 		void addAvailabilityForAll(Weekday day);
 		void removeAvailabilityFor(std::string name, Weekday day);
 		void removeAvailabilityForAll(Weekday day);
-
+		
 		unsigned calculateBonusFor(std::string name, unsigned performance);
 		void calculateSalaryFor(std::string name, unsigned bonus);
+
+		std::vector<std::string> getWorkerNamesByType(employeeType type);
+		std::vector<std::string> getWorkerByTypeAndAvailability(employeeType type, Weekday day);
 
 		friend std::ostream& operator<<(std::ostream& os, Register& reg);
 };

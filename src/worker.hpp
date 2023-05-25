@@ -7,10 +7,13 @@
 class Worker {
 	//unspecified worker class
 	//represents all types of workers without a specific assignment
-
+	
 	protected:
 		//employee name
 		std::string name;
+
+		//employee type
+		employeeType type;
 
 		//hourly wage
 		unsigned wage;
@@ -43,6 +46,7 @@ class Worker {
 		unsigned getSalary();
 		unsigned getHours();
 		bool hasSchedule();
+		employeeType getType();
 
 		//setters
 		void setName(std::string newName);

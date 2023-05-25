@@ -37,7 +37,7 @@ class Cinema {
 
 		void addEmployee(std::string name, employeeType type, unsigned short hours);
 
-		void prepareEmployees();
+		void prepareWorkplacesDay(Weekday day);
 
 		Register getRegister();
 
