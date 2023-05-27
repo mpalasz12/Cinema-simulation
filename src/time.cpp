@@ -2,12 +2,12 @@
 #include <string>
 #include <ostream>
 
-Time::Time(weekDay newDay, std::string newHour):
+Time::Time(Weekday newDay, std::string newHour):
     day(newDay),
     hour(newHour)
 {};
 
-weekDay Time::getDay()
+Weekday Time::getDay()
 {
     return day;
 }
@@ -19,25 +19,25 @@ std::ostream& operator<<(std::ostream& os, const Time& time)
 {   
     switch (time.day) 
     {
-    case 1:
+	case Weekday::Monday:
         os << "Monday: ";
         break;
-    case 2:
+	case Weekday::Tuesday:
         os << "Tuesday: ";
         break;
-    case 3:
+	case Weekday::Wednesday:
         os << "Wednesday: ";
         break;
-    case 4:
+	case Weekday::Thursday:
         os << "Thursday: ";
         break;
-    case 5:
+	case Weekday::Friday:
         os << "Friday: ";
         break;
-    case 6:
+	case Weekday::Saturday:
         os << "Saturday: ";
         break;
-    case 7:
+	case Weekday::Sunday:
         os << "Sunday: ";
         break;
     }
