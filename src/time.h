@@ -1,18 +1,30 @@
 #include<string>
 #pragma once
-#include "enums.hpp"
 
+enum weekDay
+{
+	Monday = 1,
+	Tuesday,
+	Wednesday,
+	Thursday,
+	Friday,
+	Saturday,
+	Sunday
+};
 
 class Time
 {
 private:
-    Weekday day;
-    std::string hour;
+    weekDay day;
+    int hour;
 public:
-    Time(Weekday newDay, std::string newHour);
+    Time(weekDay newDay, int newHour);
 
-    Weekday getDay();
-    std::string getHour();
+    weekDay getDay();
+    int getHour();
+
+	void setDay(weekDay newDay);
+	void setHour(int newHour);
 
     friend std::ostream& operator<<(std::ostream& os, const Time& time);
 };

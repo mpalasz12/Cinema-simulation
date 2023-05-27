@@ -1,6 +1,6 @@
 #pragma once
 #include <vector>
-#include "data.h"
+#include "movie.h"
 
-std::vector<int> generateNonRepeatingRandomNumbers(int minRange, int maxRange, int count);
-DataBase randomMovies(int howMany);
+std::vector<int> generateNonRepeatingRandomNumber(int minRange, int maxRange);
+Movie randomMovie();
