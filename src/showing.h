@@ -15,7 +15,10 @@ public:
 
     std::string getName();
     int getLength();
+    int getFreeChairs();
     double getPrice();
+    weekDay getDay();
+    int getHour();
 
     void setFreeChairs(int newFreeChairs);
 

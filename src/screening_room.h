@@ -15,6 +15,7 @@ public:
 
     std::string getName();
     int getCapacity();
+    std::vector<Showing>& getSchedule(int index);
 
     void fillSchedule();
     void printSchedule();

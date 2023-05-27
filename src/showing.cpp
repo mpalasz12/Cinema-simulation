@@ -25,9 +25,21 @@ int Showing::getLength()
 {
     return length;
 }
+int Showing::getFreeChairs()
+{
+    return freeChairs;
+}
 double Showing::getPrice()
 {
     return price;
+}
+weekDay Showing::getDay() 
+{
+    return date.getDay();
+}
+int Showing::getHour() 
+{
+    return date.getHour();
 }
 std::ostream& operator<<(std::ostream& os, const Showing& showing)
 {

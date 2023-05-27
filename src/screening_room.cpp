@@ -16,6 +16,10 @@ int ScreeningRoom::getCapacity()
 {
     return capacity;
 }
+std::vector<Showing>& ScreeningRoom::getSchedule(int index)
+{
+    return schedule[index];
+}
 void ScreeningRoom::fillSchedule()
 {
     for(int i=0; i<7; i++)

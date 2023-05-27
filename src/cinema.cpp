@@ -1,5 +1,6 @@
 #include <iostream>
 #include "cinema.hpp"
+#include"screening_room.h"
 
 Cinema::Cinema(std::string name) : name(name) {
 }
@@ -71,6 +72,52 @@ void Cinema::prepareWorkplacesDay(Weekday day) {
   *  \todo do the same for other types of workers
   */
 }
+void Cinema::addScreeningRoom(std::string newName, int newCapacity)
+{
+	ScreeningRoom screeningRoom(newName, newCapacity);
+	screeningRooms.push_back(screeningRoom);
+}
+void Cinema::setScheduleForWeek()
+{
+	for (ScreeningRoom& room : screeningRooms) 
+	{
+		room.fillSchedule();
+    }
+}
+void Cinema::buyTickets(std::string roomName, std::string movieName, weekDay day, int hour, int numberOfTickets)
+{
+    for (ScreeningRoom& room : screeningRooms) 
+    {
+        if (room.getName() == roomName)
+        {
+            std::vector<Showing>& schedule = room.getSchedule(day);
+
+            for (auto it = schedule.begin(); it != schedule.end(); ++it)
+            {
+                Showing& showing = *it;
+                if (showing.getHour() == hour && showing.getName() == movieName)
+                {
+                    if (showing.getFreeChairs() >= numberOfTickets)
+                    {
+                        showing.setFreeChairs(showing.getFreeChairs() - numberOfTickets);
+                        std::cout << "Bought" << std::endl;
+                        return;
+                    }
+                    else
+                    {
+                        std::cout << "Not enough free chairs" << std::endl;
+                        return;
+                    }
+                }
+            }
+            std::cout << "Movie not found" << std::endl;
+			break;
+        }
+    }
+
+    std::cout << "Room with such name not found " << std::endl;
+}
+
 
 Register Cinema::getRegister() {
 	return getRegister();
