@@ -149,6 +149,15 @@ std::vector<std::string> Register::getWorkerByTypeAndAvailability(employeeType t
  *  \todo tests for getWorkerNamesByType
  */
 
+void Register::assembleScheduleForAll(unsigned openingTime, unsigned closingTime) {
+	for (auto& worker : workers) {
+		if (worker -> getType() == employeeType::worker || worker -> getType() == employeeType::janitor) {
+			worker -> assembleSchedule(openingTime);
+		} else {
+			worker -> assembleSchedule(closingTime);
+		}
+	}
+}
 
 std::ostream& operator <<(std::ostream& os, Register& reg) {
 	os << reg.workersString();

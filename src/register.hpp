@@ -33,7 +33,9 @@ class Register {
 		void addAvailabilityForAll(Weekday day);
 		void removeAvailabilityFor(std::string name, Weekday day);
 		void removeAvailabilityForAll(Weekday day);
-		
+
+		void assembleScheduleForAll(unsigned openingTime, unsigned closingTime);
+
 		unsigned calculateBonusFor(std::string name, unsigned performance);
 		void calculateSalaryFor(std::string name, unsigned bonus);
 

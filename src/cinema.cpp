@@ -51,25 +51,49 @@ void Cinema::prepareWorkplacesDay(Weekday day) {
 	// set schedules and assign employees to counters
 	std::vector<std::string> availability;
 	std::vector<std::string>::iterator avalIterator;
+	std::vector<Workplace>& workplaceType = otherWorkplaces;
 
-	// get all the ticketsellers available that day
-	availability = employees.getWorkerByTypeAndAvailability(employeeType::ticketSeller, day);
-	avalIterator = availability.begin();
+	// Iterate for each worker type
+	for (auto type : types) {
+		// get workplace objects
+		switch(type) {
+			case employeeType::worker:
+				workplaceType = otherWorkplaces;
+				break;
+			case employeeType::ticketSeller:
+				workplaceType = ticketCounters;
+				break;
+			case employeeType::foodSeller:
+				workplaceType = foodCounters;
+				break;
+			case employeeType::janitor:
+				workplaceType = janitorClosets;
+				break;
+		}
 
-	// assign them to all available counters
-	// if employees > counters, more than one employee may be assigned to a workplace
-	for (auto counter : ticketCounters) {
-		if (avalIterator != availability.end()) {
-			counter.assignEmployee(*avalIterator);
-			avalIterator++;
-		} else {
+			availability = employees.getWorkerByTypeAndAvailability(type, day);
 			avalIterator = availability.begin();
+
+			// assign them to all available counters
+			// if employees > counters, more than one employee may be assigned to a workplace
+			for (auto counter : workplaceType) {
+				if (avalIterator != availability.end()) {
+					counter.assignEmployee(*avalIterator);
+					avalIterator++;
+				} else {
+					avalIterator = availability.begin();
+				}
+			}
 		}
 	}
 
 	/*! TODO: do the same for other types of workers
   *  \todo do the same for other types of workers
   */
+
+
+void Cinema::prepareEmployeeSchedules() {
+	employees.assembleScheduleForAll(openingHour, closingHour);
 }
 
 Register Cinema::getRegister() {

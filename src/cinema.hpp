@@ -21,8 +21,10 @@ class Cinema {
 		Register employees;
 		DataBase moviesInfo;
 
+		std::vector<Workplace> otherWorkplaces;
 		std::vector<Workplace> ticketCounters;
 		std::vector<Workplace> foodCounters;
+		std::vector<Workplace> janitorClosets;
 
 	public:
 		Cinema(std::string name);
@@ -38,6 +40,7 @@ class Cinema {
 		void addEmployee(std::string name, employeeType type, unsigned short hours);
 
 		void prepareWorkplacesDay(Weekday day);
+		void prepareEmployeeSchedules();
 
 		Register getRegister();
 

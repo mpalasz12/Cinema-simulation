@@ -11,21 +11,18 @@ enum class Weekday {
 	Sunday,
 };
 
-constexpr std::initializer_list<Weekday> weekdays = {
-	Weekday::Monday,
-	Weekday::Tuesday,
-	Weekday::Wednesday,
-	Weekday::Thursday,
-	Weekday::Friday,
-	Weekday::Saturday,
-	Weekday::Sunday};
-
-
 enum class employeeType {
 	worker,
 	ticketSeller,
 	foodSeller,
 	janitor,
+};
+
+constexpr std::initializer_list<employeeType> types = {
+	employeeType::worker,
+	employeeType::ticketSeller,
+	employeeType::foodSeller,
+	employeeType::janitor,
 };
 
 enum class WorkplaceType {
