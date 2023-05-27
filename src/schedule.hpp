@@ -4,16 +4,8 @@
 #include <map>
 #include <chrono>
 #include "day.hpp"
+#include "enums.hpp"
 
-enum class Weekday {
-	Monday,
-	Tuesday,
-	Wednesday,
-	Thursday,
-	Friday,
-	Saturday,
-	Sunday,
-};
 
 class Schedule {
 	private:
