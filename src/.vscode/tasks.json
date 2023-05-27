@@ -8,6 +8,7 @@
                 "-fdiagnostics-color=always",
                 "-g",
                 "${workspaceFolder}/main.cpp",
+                "${workspaceFolder}/showing.cpp",
                 "${workspaceFolder}/cinema.cpp",
                 "${workspaceFolder}/day.cpp",
                 "${workspaceFolder}/register.cpp",
