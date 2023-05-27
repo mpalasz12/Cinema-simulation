@@ -1,6 +1,7 @@
 #pragma once
 #include <string>
 #include "time.h"
+#include "enums.hpp"
 
 class Showing
 {
@@ -17,7 +18,7 @@ public:
     int getLength();
     int getFreeChairs();
     double getPrice();
-    weekDay getDay();
+    Weekday getDay();
     int getHour();
 
     void setFreeChairs(int newFreeChairs);

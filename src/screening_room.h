@@ -3,6 +3,7 @@
 #include <vector>
 #include <memory>
 #include "showing.h"
+#include "enums.hpp"
 
 class ScreeningRoom
 {

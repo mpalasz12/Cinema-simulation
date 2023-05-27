@@ -24,29 +24,29 @@ void ScreeningRoom::fillSchedule()
 {
     for(int i=0; i<7; i++)
     {
-        weekDay day;
+        Weekday day;
         switch (i) 
         {
         case 0:
-            day = Monday;
+            day = Weekday::Monday;
             break;
         case 1:
-            day = Tuesday;
+            day = Weekday::Tuesday;
             break;
         case 2:
-            day = Wednesday;
+            day = Weekday::Wednesday;
             break;
         case 3:
-            day = Thursday;
+            day = Weekday::Thursday;
             break;
         case 4:
-            day = Friday;
+            day = Weekday::Friday;
             break;
         case 5:
-            day = Saturday;
+            day = Weekday::Saturday;
             break;
         case 6:
-            day = Sunday;
+            day = Weekday::Sunday;
             break;
         }
         Movie movie = randomMovie();

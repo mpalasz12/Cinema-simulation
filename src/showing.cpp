@@ -33,7 +33,7 @@ double Showing::getPrice()
 {
     return price;
 }
-weekDay Showing::getDay() 
+Weekday Showing::getDay() 
 {
     return date.getDay();
 }
