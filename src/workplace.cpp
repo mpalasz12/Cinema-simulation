@@ -44,3 +44,7 @@ bool Workplace::unassignEmployee(std::string name) {
 		return false;
 	}
 }
+
+unsigned Workplace::assignedNum() {
+	return assignedEmployees.size();
+}

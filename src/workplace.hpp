@@ -24,6 +24,8 @@ class Workplace {
 		
 		bool assignEmployee(std::string name);
 		bool unassignEmployee(std::string name);
+
+		unsigned assignedNum();
 		
 		
 };

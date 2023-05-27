@@ -1,8 +1,15 @@
 #include <iostream>
+#include <algorithm>
 #include "cinema.hpp"
+<<<<<<< HEAD
 #include"screening_room.h"
+=======
+#include "workplace.hpp"
+>>>>>>> 21b9a85ba44c9fdc5220afaa508ffe75b2ef3015
 
-Cinema::Cinema(std::string name) : name(name) {
+Cinema::Cinema(std::string name, unsigned short opening, unsigned short closing) :
+	name(name), openingHour(opening), closingHour(closing) {
+	moviesInfo = DataBase();
 }
 
 std::string Cinema::getName() {
@@ -48,29 +55,112 @@ void Cinema::addEmployee(std::string name, employeeType type, unsigned short hou
 	}
 }
 
+void Cinema::addTicketCounter() {
+	Workplace counter(ticketCounters.size(), WorkplaceType::ticketCounter);
+	ticketCounters.push_back(counter);
+}
+
+void Cinema::addFoodCounter() {
+	Workplace counter(foodCounters.size(), WorkplaceType::foodCounter);
+	foodCounters.push_back(counter);
+}
+
+void Cinema::addJanitorCloset() {
+	Workplace closet(janitorClosets.size(), WorkplaceType::janitorialCloset);
+	janitorClosets.push_back(closet);
+}
+
+std::vector<Workplace>::iterator Cinema::findWorkplace(unsigned ID, WorkplaceType type) {
+
+	auto workplaceVec = getWorkplaceVec(type);
+
+	auto result = find_if(workplaceVec.begin(), workplaceVec.end(), 
+			[ID](auto workplace) {
+				return workplace.getIdentifier() == ID;
+			});
+
+	return result;
+}
+
+std::vector<Workplace>& Cinema::getWorkplaceVec(WorkplaceType type) {
+	std::vector<Workplace>& workplaceVec = ticketCounters;
+	switch (type) {
+		case WorkplaceType::ticketCounter:
+			break;
+		case WorkplaceType::foodCounter:
+			workplaceVec = foodCounters;
+			break;
+		case WorkplaceType::janitorialCloset:
+			workplaceVec = janitorClosets;
+			break;
+		case WorkplaceType::other:
+			workplaceVec = otherWorkplaces;
+			break;
+	}
+	return workplaceVec;
+}
+
+bool Cinema::isWorkplace(unsigned ID, WorkplaceType type) {
+	auto workplaceVec = getWorkplaceVec(type);
+	auto result = findWorkplace(ID, type);
+	return (result != workplaceVec.end());
+}
+
+bool Cinema::hasEmployee(unsigned ID, WorkplaceType type) {
+	if (isWorkplace(ID, type)) {
+		auto result = findWorkplace(ID, type);
+		return result -> assignedNum() != 0;
+	} else {
+		return false;
+	}
+}
+
 void Cinema::prepareWorkplacesDay(Weekday day) {
 	// set schedules and assign employees to counters
 	std::vector<std::string> availability;
 	std::vector<std::string>::iterator avalIterator;
+	std::vector<Workplace>* workplaceType = nullptr;
 
-	// get all the ticketsellers available that day
-	availability = employees.getWorkerByTypeAndAvailability(employeeType::ticketSeller, day);
-	avalIterator = availability.begin();
+	// Iterate for each worker type
+	for (auto type : types) {
+		// get workplace objects
+		switch(type) {
+			case employeeType::worker:
+				workplaceType = &otherWorkplaces;
+				break;
+			case employeeType::ticketSeller:
+				workplaceType = &ticketCounters;
+				break;
+			case employeeType::foodSeller:
+				workplaceType = &foodCounters;
+				break;
+			case employeeType::janitor:
+				workplaceType = &janitorClosets;
+				break;
+		}
 
-	// assign them to all available counters
-	// if employees > counters, more than one employee may be assigned to a workplace
-	for (auto counter : ticketCounters) {
-		if (avalIterator != availability.end()) {
-			counter.assignEmployee(*avalIterator);
-			avalIterator++;
-		} else {
+			availability = employees.getWorkerByTypeAndAvailability(type, day);
 			avalIterator = availability.begin();
+
+			// assign them to all available counters
+			// if employees > counters, more than one employee may be assigned to a workplace
+			for (auto& counter : *workplaceType) {
+				if (avalIterator == availability.end()) {
+					break;
+				}
+				if (std::distance(availability.begin(), avalIterator) - workplaceType -> size() >= 0) {
+					
+					counter.assignEmployee(*avalIterator);
+					avalIterator++;
+				} else {
+					avalIterator = availability.begin();
+				}
+			}
 		}
 	}
 
-	/*! TODO: do the same for other types of workers
-  *  \todo do the same for other types of workers
-  */
+void Cinema::prepareEmployeeSchedules() {
+	employees.assembleScheduleForAll(openingHour, closingHour);
 }
 void Cinema::addScreeningRoom(std::string newName, int newCapacity)
 {
@@ -127,8 +217,6 @@ void Cinema::buyTickets(std::string roomName, std::string movieName, weekDay day
 }
 
 
-Register Cinema::getRegister() {
-	return getRegister();
+void Cinema::addAvailabilityForAll(Weekday day) {
+	employees.addAvailabilityForAll(day);
 }
-
-

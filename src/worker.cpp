@@ -179,7 +179,7 @@ void FoodSeller::assembleSchedule(unsigned int time) {
 	
 	//since cinema traffic is highest in the evenings, food sellers will work evening shifts
 	//shift end time is expected to be one hour before cinema closure
-	schedule.assembleScheduleMorning(hours, availability, time - 1);
+	schedule.assembleScheduleEvening(hours, availability, time - 1);
 }
 
 

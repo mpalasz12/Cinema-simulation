@@ -7,7 +7,7 @@ Time::Time(weekDay newDay, int newHour):
     hour(newHour)
 {};
 
-weekDay Time::getDay()
+Weekday Time::getDay()
 {
     return day;
 }
