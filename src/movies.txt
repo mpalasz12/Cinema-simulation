@@ -1,0 +1,6 @@
+Lord of the Rings,20,120
+Hobbit,22,130
+Interstellar,25,150
+Shrek,15,100
+Jak wytresowac smoka,16,95
+Potwory i spolka,13,97
