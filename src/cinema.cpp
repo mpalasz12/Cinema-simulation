@@ -84,6 +84,14 @@ void Cinema::setScheduleForWeek()
 		room.fillSchedule();
     }
 }
+void Cinema::printSchedule()
+{
+    for (ScreeningRoom& room : screeningRooms) 
+	{
+        std::cout << room.getName() << ": ";
+		room.printSchedule();
+    }
+}
 void Cinema::buyTickets(std::string roomName, std::string movieName, weekDay day, int hour, int numberOfTickets)
 {
     for (ScreeningRoom& room : screeningRooms) 
