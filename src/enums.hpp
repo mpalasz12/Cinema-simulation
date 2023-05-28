@@ -29,4 +29,5 @@ enum class WorkplaceType {
 	ticketCounter,
 	janitorialCloset,
 	foodCounter,
+	other,
 };
