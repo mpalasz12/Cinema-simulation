@@ -1,15 +1,11 @@
 #include <iostream>
 #include <algorithm>
 #include "cinema.hpp"
-<<<<<<< HEAD
 #include"screening_room.h"
-=======
 #include "workplace.hpp"
->>>>>>> 21b9a85ba44c9fdc5220afaa508ffe75b2ef3015
 
 Cinema::Cinema(std::string name, unsigned short opening, unsigned short closing) :
 	name(name), openingHour(opening), closingHour(closing) {
-	moviesInfo = DataBase();
 }
 
 std::string Cinema::getName() {

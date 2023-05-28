@@ -1,8 +1,9 @@
 #include "time.h"
+#include "enums.hpp"
 #include <string>
 #include <ostream>
 
-Time::Time(weekDay newDay, int newHour):
+Time::Time(Weekday newDay, int newHour):
     day(newDay),
     hour(newHour)
 {};
@@ -15,7 +16,7 @@ int Time::getHour()
 {
     return hour;
 }
-void Time::setDay(weekDay newDay)
+void Time::setDay(Weekday newDay)
 {
     day = newDay;
 }
