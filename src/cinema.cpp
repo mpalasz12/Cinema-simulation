@@ -67,6 +67,18 @@ void Cinema::addJanitorCloset() {
 }
 
 std::vector<Workplace>::iterator Cinema::findWorkplace(unsigned ID, WorkplaceType type) {
+
+	auto workplaceVec = getWorkplaceVec(type);
+
+	auto result = find_if(workplaceVec.begin(), workplaceVec.end(), 
+			[ID](auto workplace) {
+				return workplace.getIdentifier() == ID;
+			});
+
+	return result;
+}
+
+std::vector<Workplace>& Cinema::getWorkplaceVec(WorkplaceType type) {
 	std::vector<Workplace>& workplaceVec = ticketCounters;
 	switch (type) {
 		case WorkplaceType::ticketCounter:
@@ -81,41 +93,45 @@ std::vector<Workplace>::iterator Cinema::findWorkplace(unsigned ID, WorkplaceTyp
 			workplaceVec = otherWorkplaces;
 			break;
 	}
-
-	auto result = find_if(workplaceVec.begin(), workplaceVec.end(), 
-			[ID](auto workplace) {
-				return workplace.getIdentifier() == ID;
-			});
-
-	return result;
+	return workplaceVec;
 }
 
-bool Cinema::tCounterHasEmployee(unsigned ID) {
-	auto result = findWorkplace(ID, WorkplaceType::ticketCounter);
-	return (result != ticketCounters.end());
+bool Cinema::isWorkplace(unsigned ID, WorkplaceType type) {
+	auto workplaceVec = getWorkplaceVec(type);
+	auto result = findWorkplace(ID, type);
+	return (result != workplaceVec.end());
+}
+
+bool Cinema::hasEmployee(unsigned ID, WorkplaceType type) {
+	if (isWorkplace(ID, type)) {
+		auto result = findWorkplace(ID, type);
+		return result -> assignedNum() != 0;
+	} else {
+		return false;
+	}
 }
 
 void Cinema::prepareWorkplacesDay(Weekday day) {
 	// set schedules and assign employees to counters
 	std::vector<std::string> availability;
 	std::vector<std::string>::iterator avalIterator;
-	std::vector<Workplace>& workplaceType = otherWorkplaces;
+	std::vector<Workplace>* workplaceType = nullptr;
 
 	// Iterate for each worker type
 	for (auto type : types) {
 		// get workplace objects
 		switch(type) {
 			case employeeType::worker:
-				workplaceType = otherWorkplaces;
+				workplaceType = &otherWorkplaces;
 				break;
 			case employeeType::ticketSeller:
-				workplaceType = ticketCounters;
+				workplaceType = &ticketCounters;
 				break;
 			case employeeType::foodSeller:
-				workplaceType = foodCounters;
+				workplaceType = &foodCounters;
 				break;
 			case employeeType::janitor:
-				workplaceType = janitorClosets;
+				workplaceType = &janitorClosets;
 				break;
 		}
 
@@ -124,8 +140,12 @@ void Cinema::prepareWorkplacesDay(Weekday day) {
 
 			// assign them to all available counters
 			// if employees > counters, more than one employee may be assigned to a workplace
-			for (auto counter : workplaceType) {
-				if (avalIterator != availability.end()) {
+			for (auto& counter : *workplaceType) {
+				if (avalIterator == availability.end()) {
+					break;
+				}
+				if (std::distance(availability.begin(), avalIterator) - workplaceType -> size() >= 0) {
+					
 					counter.assignEmployee(*avalIterator);
 					avalIterator++;
 				} else {

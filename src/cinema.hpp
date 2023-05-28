@@ -13,6 +13,7 @@
 
 class Cinema {
 	private:
+		// class fields
 		std::string name;
 		unsigned short openingHour;
 		unsigned short closingHour;
@@ -25,15 +26,15 @@ class Cinema {
 		std::vector<Workplace> foodCounters;
 		std::vector<Workplace> janitorClosets;
 
-		std::vector<Workplace>::iterator findTicketCounter(unsigned ID);
-		std::vector<Workplace>::iterator findFoodCounter(unsigned ID);
-		std::vector<Workplace>::iterator findCloset(unsigned ID);
-		std::vector<Workplace>::iterator findOther(unsigned ID);
-
+		// private methods
 		std::vector<Workplace>::iterator findWorkplace(unsigned ID, WorkplaceType type);
+		std::vector<Workplace>& getWorkplaceVec(WorkplaceType type);
 	public:
+
+		// constructor(s)
 		Cinema(std::string name, unsigned short opening, unsigned short closing);
 
+		// getters, setters
 		std::string getName();
 		void setName(std::string newName);
 
@@ -42,14 +43,17 @@ class Cinema {
 		void setOpeningHour(unsigned short hour);
 		void setClosingHour(unsigned short hour);
 
+		// collection manipulation
 		void addEmployee(std::string name, employeeType type, unsigned short hours);
 
 		void addTicketCounter();
 		void addFoodCounter();
 		void addJanitorCloset();
 
-		bool tCounterHasEmployee(unsigned ID);
+		bool isWorkplace(unsigned ID, WorkplaceType type);
+		bool hasEmployee(unsigned ID, WorkplaceType type);
 
+		// simulation related methods
 		void prepareWorkplacesDay(Weekday day);
 		void prepareEmployeeSchedules();
 

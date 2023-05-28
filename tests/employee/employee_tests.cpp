@@ -193,12 +193,14 @@ TEST_CASE("Cinema tests", "[cinema]") {
 	cinema.addAvailabilityForAll(Weekday::Thursday);
 
 	cinema.addTicketCounter();
+	cinema.addTicketCounter();
 	cinema.addFoodCounter();
 	cinema.addJanitorCloset();
 
 	cinema.prepareEmployeeSchedules();
 	cinema.prepareWorkplacesDay(Weekday::Monday);
 
-	CHECK(cinema.tCounterHasEmployee(0));
+	CHECK(cinema.hasEmployee(0, WorkplaceType::ticketCounter));
+	CHECK_FALSE(cinema.hasEmployee(1, WorkplaceType::ticketCounter));
 
 }
