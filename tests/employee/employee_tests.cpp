@@ -9,6 +9,8 @@
 #include "../../src/schedule.hpp"
 #include "../../src/register.hpp"
 #include "../../src/enums.hpp"
+#include "../../src/cinema.hpp"
+#include "../../src/workplace.hpp"
 
 TEST_CASE("Daily schedule tests", "[day]") {
 	Day day(10, 18);
@@ -177,4 +179,26 @@ TEST_CASE("Register tests", "[register]") {
 		CHECK(worker1.getSalary() == 510);
 		CHECK(worker2.getSalary() == 500);
 	}
+}
+
+TEST_CASE("Cinema tests", "[cinema]") {
+	Cinema cinema("cinema", 10, 22);
+	cinema.addEmployee("john", employeeType::worker, 20);
+	cinema.addEmployee("mark", employeeType::worker, 20);
+	cinema.addEmployee("david", employeeType::ticketSeller, 20);
+	cinema.addEmployee("anna", employeeType::janitor, 20);
+	cinema.addAvailabilityForAll(Weekday::Monday);
+	cinema.addAvailabilityForAll(Weekday::Tuesday);
+	cinema.addAvailabilityForAll(Weekday::Wednesday);
+	cinema.addAvailabilityForAll(Weekday::Thursday);
+
+	cinema.addTicketCounter();
+	cinema.addFoodCounter();
+	cinema.addJanitorCloset();
+
+	cinema.prepareEmployeeSchedules();
+	cinema.prepareWorkplacesDay(Weekday::Monday);
+
+	CHECK(cinema.tCounterHasEmployee(0));
+
 }

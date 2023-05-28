@@ -18,6 +18,9 @@ class Register {
 
 	public:
 		Register();
+		Register(const Register&) = delete;
+		Register(Register&&) = default;
+
 		void addWorker(std::string name, unsigned short hours);
 		void addTicketSeller(std::string name, unsigned short hours, unsigned short cashID);
 		void addFoodSeller(std::string name, unsigned short hours);
