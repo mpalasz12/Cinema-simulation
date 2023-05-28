@@ -56,6 +56,7 @@ class Cinema {
 
 		// simulation related methods
 		void prepareWorkplacesDay(Weekday day);
+		void prepareEmployeeSchedules();
 		void addScreeningRoom(std::string newName, int newCapacity);
 		void setScheduleForWeek();
 		void printSchedule();
