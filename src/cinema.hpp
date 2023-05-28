@@ -1,7 +1,6 @@
 #pragma once
 #include <string>
 #include <vector>
-#include <memory>
 #include "register.hpp"
 #include "data.h"
 #include "enums.hpp"
@@ -14,9 +13,9 @@
 
 class Cinema {
 	private:
+		std::string name;
 		unsigned short openingHour;
 		unsigned short closingHour;
-		std::string name;
 
 		Register employees;
 		DataBase moviesInfo;
@@ -26,8 +25,14 @@ class Cinema {
 		std::vector<Workplace> foodCounters;
 		std::vector<Workplace> janitorClosets;
 
+		std::vector<Workplace>::iterator findTicketCounter(unsigned ID);
+		std::vector<Workplace>::iterator findFoodCounter(unsigned ID);
+		std::vector<Workplace>::iterator findCloset(unsigned ID);
+		std::vector<Workplace>::iterator findOther(unsigned ID);
+
+		std::vector<Workplace>::iterator findWorkplace(unsigned ID, WorkplaceType type);
 	public:
-		Cinema(std::string name);
+		Cinema(std::string name, unsigned short opening, unsigned short closing);
 
 		std::string getName();
 		void setName(std::string newName);
@@ -39,9 +44,15 @@ class Cinema {
 
 		void addEmployee(std::string name, employeeType type, unsigned short hours);
 
+		void addTicketCounter();
+		void addFoodCounter();
+		void addJanitorCloset();
+
+		bool tCounterHasEmployee(unsigned ID);
+
 		void prepareWorkplacesDay(Weekday day);
 		void prepareEmployeeSchedules();
 
-		Register getRegister();
+		void addAvailabilityForAll(Weekday day);
 
 };

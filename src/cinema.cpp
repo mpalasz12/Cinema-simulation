@@ -1,7 +1,11 @@
 #include <iostream>
+#include <algorithm>
 #include "cinema.hpp"
+#include "workplace.hpp"
 
-Cinema::Cinema(std::string name) : name(name) {
+Cinema::Cinema(std::string name, unsigned short opening, unsigned short closing) :
+	name(name), openingHour(opening), closingHour(closing) {
+	moviesInfo = DataBase();
 }
 
 std::string Cinema::getName() {
@@ -47,6 +51,50 @@ void Cinema::addEmployee(std::string name, employeeType type, unsigned short hou
 	}
 }
 
+void Cinema::addTicketCounter() {
+	Workplace counter(ticketCounters.size(), WorkplaceType::ticketCounter);
+	ticketCounters.push_back(counter);
+}
+
+void Cinema::addFoodCounter() {
+	Workplace counter(foodCounters.size(), WorkplaceType::foodCounter);
+	foodCounters.push_back(counter);
+}
+
+void Cinema::addJanitorCloset() {
+	Workplace closet(janitorClosets.size(), WorkplaceType::janitorialCloset);
+	janitorClosets.push_back(closet);
+}
+
+std::vector<Workplace>::iterator Cinema::findWorkplace(unsigned ID, WorkplaceType type) {
+	std::vector<Workplace>& workplaceVec = ticketCounters;
+	switch (type) {
+		case WorkplaceType::ticketCounter:
+			break;
+		case WorkplaceType::foodCounter:
+			workplaceVec = foodCounters;
+			break;
+		case WorkplaceType::janitorialCloset:
+			workplaceVec = janitorClosets;
+			break;
+		case WorkplaceType::other:
+			workplaceVec = otherWorkplaces;
+			break;
+	}
+
+	auto result = find_if(workplaceVec.begin(), workplaceVec.end(), 
+			[ID](auto workplace) {
+				return workplace.getIdentifier() == ID;
+			});
+
+	return result;
+}
+
+bool Cinema::tCounterHasEmployee(unsigned ID) {
+	auto result = findWorkplace(ID, WorkplaceType::ticketCounter);
+	return (result != ticketCounters.end());
+}
+
 void Cinema::prepareWorkplacesDay(Weekday day) {
 	// set schedules and assign employees to counters
 	std::vector<std::string> availability;
@@ -87,17 +135,10 @@ void Cinema::prepareWorkplacesDay(Weekday day) {
 		}
 	}
 
-	/*! TODO: do the same for other types of workers
-  *  \todo do the same for other types of workers
-  */
-
-
 void Cinema::prepareEmployeeSchedules() {
 	employees.assembleScheduleForAll(openingHour, closingHour);
 }
 
-Register Cinema::getRegister() {
-	return getRegister();
+void Cinema::addAvailabilityForAll(Weekday day) {
+	employees.addAvailabilityForAll(day);
 }
-
-
