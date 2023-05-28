@@ -1,8 +1,9 @@
 #include "time.h"
+#include "enums.hpp"
 #include <string>
 #include <ostream>
 
-Time::Time(Weekday newDay, std::string newHour):
+Time::Time(Weekday newDay, int newHour):
     day(newDay),
     hour(newHour)
 {};
@@ -11,36 +12,20 @@ Weekday Time::getDay()
 {
     return day;
 }
-std::string Time::getHour()
+int Time::getHour()
 {
     return hour;
 }
+void Time::setDay(Weekday newDay)
+{
+    day = newDay;
+}
+void Time::setHour(int newHour)
+{
+    hour = newHour;
+}
 std::ostream& operator<<(std::ostream& os, const Time& time)
 {   
-    switch (time.day) 
-    {
-	case Weekday::Monday:
-        os << "Monday: ";
-        break;
-	case Weekday::Tuesday:
-        os << "Tuesday: ";
-        break;
-	case Weekday::Wednesday:
-        os << "Wednesday: ";
-        break;
-	case Weekday::Thursday:
-        os << "Thursday: ";
-        break;
-	case Weekday::Friday:
-        os << "Friday: ";
-        break;
-	case Weekday::Saturday:
-        os << "Saturday: ";
-        break;
-	case Weekday::Sunday:
-        os << "Sunday: ";
-        break;
-    }
-    os << time.hour << std::endl;
+    os << time.hour << ":00";
     return os;
 }

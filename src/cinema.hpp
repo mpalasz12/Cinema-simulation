@@ -5,6 +5,7 @@
 #include "data.h"
 #include "enums.hpp"
 #include "workplace.hpp"
+#include "screening_room.h"
 
 
 /*! TODO: add class fields related to other cinema classes
@@ -19,7 +20,7 @@ class Cinema {
 		unsigned short closingHour;
 
 		Register employees;
-		DataBase moviesInfo;
+		std::vector<ScreeningRoom> screeningRooms;
 
 		std::vector<Workplace> otherWorkplaces;
 		std::vector<Workplace> ticketCounters;
@@ -56,6 +57,11 @@ class Cinema {
 		// simulation related methods
 		void prepareWorkplacesDay(Weekday day);
 		void prepareEmployeeSchedules();
+		void addScreeningRoom(std::string newName, int newCapacity);
+		void setScheduleForWeek();
+		void printSchedule();
+
+		void buyTickets(std::string roomName, std::string movieName, Weekday day, int hour, int numberOfTickets);
 
 		void addAvailabilityForAll(Weekday day);
 

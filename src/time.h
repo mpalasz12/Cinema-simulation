@@ -2,17 +2,19 @@
 #pragma once
 #include "enums.hpp"
 
-
 class Time
 {
 private:
     Weekday day;
-    std::string hour;
+    int hour;
 public:
-    Time(Weekday newDay, std::string newHour);
+    Time(Weekday newDay, int newHour);
 
     Weekday getDay();
-    std::string getHour();
+    int getHour();
+
+	void setDay(Weekday newDay);
+	void setHour(int newHour);
 
     friend std::ostream& operator<<(std::ostream& os, const Time& time);
 };

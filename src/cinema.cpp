@@ -1,11 +1,11 @@
 #include <iostream>
 #include <algorithm>
 #include "cinema.hpp"
+#include"screening_room.h"
 #include "workplace.hpp"
 
 Cinema::Cinema(std::string name, unsigned short opening, unsigned short closing) :
 	name(name), openingHour(opening), closingHour(closing) {
-	moviesInfo = DataBase();
 }
 
 std::string Cinema::getName() {
@@ -158,6 +158,60 @@ void Cinema::prepareWorkplacesDay(Weekday day) {
 void Cinema::prepareEmployeeSchedules() {
 	employees.assembleScheduleForAll(openingHour, closingHour);
 }
+void Cinema::addScreeningRoom(std::string newName, int newCapacity)
+{
+	ScreeningRoom screeningRoom(newName, newCapacity);
+	screeningRooms.push_back(screeningRoom);
+}
+void Cinema::setScheduleForWeek()
+{
+	for (ScreeningRoom& room : screeningRooms) 
+	{
+		room.fillSchedule();
+    }
+}
+void Cinema::printSchedule()
+{
+    for (ScreeningRoom& room : screeningRooms) 
+	{
+        std::cout << room.getName() << ": ";
+		room.printSchedule();
+    }
+}
+void Cinema::buyTickets(std::string roomName, std::string movieName, Weekday day, int hour, int numberOfTickets)
+{
+    for (ScreeningRoom& room : screeningRooms) 
+    {
+        if (room.getName() == roomName)
+        {
+            std::vector<Showing>& schedule = room.getSchedule(static_cast<int>(day));
+
+            for (auto it = schedule.begin(); it != schedule.end(); ++it)
+            {
+                Showing& showing = *it;
+                if (showing.getHour() == hour && showing.getName() == movieName)
+                {
+                    if (showing.getFreeChairs() >= numberOfTickets)
+                    {
+                        showing.setFreeChairs(showing.getFreeChairs() - numberOfTickets);
+                        std::cout << "Bought" << std::endl;
+                        return;
+                    }
+                    else
+                    {
+                        std::cout << "Not enough free chairs" << std::endl;
+                        return;
+                    }
+                }
+            }
+            std::cout << "Movie not found" << std::endl;
+			break;
+        }
+    }
+
+    std::cout << "Room with such name not found " << std::endl;
+}
+
 
 void Cinema::addAvailabilityForAll(Weekday day) {
 	employees.addAvailabilityForAll(day);
