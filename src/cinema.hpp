@@ -64,5 +64,6 @@ class Cinema {
 		void buyTickets(std::string roomName, std::string movieName, Weekday day, int hour, int numberOfTickets);
 
 		void addAvailabilityForAll(Weekday day);
+		void makeRandomEmployees(employeeType type, unsigned amount);
 
 };
