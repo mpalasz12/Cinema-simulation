@@ -178,6 +178,25 @@ void Cinema::printSchedule()
 		room.printSchedule();
     }
 }
+std::vector<Showing> Cinema::findShowings(std::string movieName)
+{
+	std::vector<Showing> result;
+	for (ScreeningRoom& room : screeningRooms)
+	{
+		for(int x=0; x<7; x++)
+		{
+			std::vector<Showing>& schedule = room.getSchedule(static_cast<int>(x));
+			for (Showing& showing : schedule)
+        {
+            if (showing.getName() == movieName)
+            {
+                result.push_back(showing);
+            }
+        }
+		}
+	}
+	return result;
+}
 void Cinema::buyTickets(std::string roomName, std::string movieName, Weekday day, unsigned int hour, unsigned int numberOfTickets)
 {
     for (ScreeningRoom& room : screeningRooms) 
