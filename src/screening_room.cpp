@@ -20,7 +20,7 @@ std::vector<Showing>& ScreeningRoom::getSchedule(int index)
 {
     return schedule[index];
 }
-void ScreeningRoom::fillSchedule()
+void ScreeningRoom::fillSchedule(unsigned short opening, unsigned short closing)
 {
     for(int i=0; i<7; i++)
     {
@@ -50,12 +50,12 @@ void ScreeningRoom::fillSchedule()
             break;
         }
         Movie movie = randomMovie();
-        int limit = 8;
+        int limit = opening;
         Time time(day, limit);
         Showing added_show(movie.getName(), time, movie.getDuration(), movie.getPrice());
         added_show.setFreeChairs(capacity);
         schedule[i].push_back(added_show);
-        while(limit + added_show.getLength() <= 20)
+        while(limit + added_show.getLength() <= closing)
         {
             limit += added_show.getLength();
             movie = randomMovie();

@@ -61,6 +61,7 @@ class Cinema {
 		void setScheduleForWeek();
 		void printSchedule();
 
+		void findShowings(std::string movieName, unsigned int howManyTickets);
 		void buyTickets(std::string roomName, std::string movieName, Weekday day, unsigned int hour, unsigned int numberOfTickets);
 
 		void addAvailabilityForAll(Weekday day);
