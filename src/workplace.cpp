@@ -3,7 +3,7 @@
 #include "workplace.hpp"
 
 Workplace::Workplace(unsigned id, WorkplaceType type) :
-	identifier(id), type(type) {
+	identifier(id), type(type), working(false) {
 
 }
 
@@ -19,6 +19,15 @@ std::vector<std::string>::iterator Workplace::findEmployee(std::string name) {
 	auto result = std::find(assignedEmployees.begin(), assignedEmployees.end(), name);
 	return result;
 }
+
+bool Workplace::isWorking() {
+	return working;
+}
+
+void Workplace::setWorking(bool value) {
+	working = value;
+}
+
 
 bool Workplace::isAssigned(std::string name) {
 	auto result = findEmployee(name);
@@ -47,4 +56,8 @@ bool Workplace::unassignEmployee(std::string name) {
 
 unsigned Workplace::assignedNum() {
 	return assignedEmployees.size();
+}
+
+std::vector<std::string> Workplace::getAssignedEmployees() {
+	return assignedEmployees;
 }

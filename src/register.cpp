@@ -19,8 +19,8 @@ void Register::addWorker(std::string name, unsigned short hours) {
 	workers.push_back(std::move(worker));
 }
 
-void Register::addTicketSeller(std::string name, unsigned short hours, unsigned short cashID) {
-	std::unique_ptr<TicketSeller> worker = std::make_unique<TicketSeller>(name, hours, cashID);
+void Register::addTicketSeller(std::string name, unsigned short hours) {
+	std::unique_ptr<TicketSeller> worker = std::make_unique<TicketSeller>(name, hours);
 	workers.push_back(std::move(worker));
 }
 
@@ -43,7 +43,7 @@ std::vector<std::unique_ptr<Worker>>::iterator Register::findWorker(std::string 
 	return result;
 }
 
-Worker Register::findWorkerByName(std::string name) {
+Worker& Register::findWorkerByName(std::string name) {
 	auto result = findWorker(name);
 	if (result != workers.end()) {
 		return **result;
@@ -157,6 +157,11 @@ void Register::assembleScheduleForAll(unsigned openingTime, unsigned closingTime
 			worker -> assembleSchedule(closingTime);
 		}
 	}
+}
+
+bool Register::isWorking(std::string name, unsigned hour, Weekday day) {
+	auto result = **findWorker(name);
+	return result.isWorking(day, hour);
 }
 
 std::ostream& operator <<(std::ostream& os, Register& reg) {

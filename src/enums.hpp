@@ -31,3 +31,10 @@ enum class WorkplaceType {
 	foodCounter,
 	other,
 };
+
+constexpr std::initializer_list<WorkplaceType> workplaceTypes = {
+	WorkplaceType::ticketCounter,
+	WorkplaceType::janitorialCloset,
+	WorkplaceType::foodCounter,
+	WorkplaceType::other,
+};

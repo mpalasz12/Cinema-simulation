@@ -26,5 +26,10 @@ int main(int argc, char *argv[]) {
 	cinema.prepareEmployeeSchedules();
 	cinema.prepareWorkplacesDay(Weekday::Monday);
 
-	cinema.hasEmployee(0, WorkplaceType::ticketCounter);
+
+	cinema.updateWorkingCounters(19, Weekday::Monday);
+
+	if (cinema.isWorking(WorkplaceType::ticketCounter, 0)) {
+		std::cout << "essa" << std::endl;
+	}
 }

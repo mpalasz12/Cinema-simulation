@@ -38,3 +38,9 @@ void Simulation::prepareWeek() {
 void Simulation::prepareDay() {
 	cinema.prepareWorkplacesDay(time.getDay());
 }
+
+void Simulation::runStep() {
+	// tu cogodzinne zmiany
+	cinema.updateWorkingCounters(time.getHour(), time.getDay());
+}
+

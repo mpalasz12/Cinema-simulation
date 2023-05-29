@@ -10,6 +10,7 @@ class Workplace {
 		WorkplaceType type;
 		std::vector<std::string> assignedEmployees;
 		std::vector<std::string>::iterator findEmployee(std::string name);
+		bool working;
 
 	public:
 		Workplace(unsigned id, WorkplaceType type);
@@ -20,6 +21,9 @@ class Workplace {
 		WorkplaceType getType();
 		void setType();
 
+		bool isWorking();
+		void setWorking(bool value);
+
 		bool isAssigned(std::string name);
 		
 		bool assignEmployee(std::string name);
@@ -27,5 +31,5 @@ class Workplace {
 
 		unsigned assignedNum();
 		
-		
+		std::vector<std::string> getAssignedEmployees();
 };

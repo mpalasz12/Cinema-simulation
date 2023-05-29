@@ -64,9 +64,7 @@ class Schedule {
 			);
 
 		//other
-		bool isWorkingTime(unsigned short hour);
+		bool isWorkingTime(Weekday day, unsigned hour);
 
-		//TODO: implement smart schedules (long-term/project)
-		void smartSchedule(unsigned short hours);
 };
 

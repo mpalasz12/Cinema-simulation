@@ -59,6 +59,7 @@ class Worker {
 		void removeAvailability(Weekday day);
 
 		//other
+		bool isWorking(Weekday day, unsigned hour);
 		void salaryWithoutBonus(unsigned timeWorked);
 		virtual void calculateSalary(unsigned bonus);
 		virtual void assembleSchedule(unsigned time);
@@ -69,10 +70,8 @@ class Worker {
 
 
 class TicketSeller : public Worker {
-	private:
-		unsigned cashID;
 	public:
-		TicketSeller(std::string name, unsigned short hours, unsigned short cashID);
+		TicketSeller(std::string name, unsigned short hours);
 		void calculateSalary(unsigned bonus);
 		void assembleSchedule(unsigned time);
 		unsigned calculateBonus(unsigned performance);

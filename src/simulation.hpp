@@ -28,4 +28,7 @@ class Simulation {
 
 		void addToLog(std::string log);
 		std::string getStepLog();
+
+		void stepCounters();
+		void stepMovieRooms();
 };
