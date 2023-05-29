@@ -40,7 +40,7 @@ void Cinema::addEmployee(std::string name, employeeType type, unsigned short hou
 			employees.addWorker(name, hours);
 			break;
 		case employeeType::ticketSeller:
-			employees.addTicketSeller(name, hours, 0);
+			employees.addTicketSeller(name, hours);
 			break;
 		case employeeType::foodSeller:
 			employees.addFoodSeller(name, hours);
@@ -68,7 +68,7 @@ void Cinema::addJanitorCloset() {
 
 std::vector<Workplace>::iterator Cinema::findWorkplace(unsigned ID, WorkplaceType type) {
 
-	auto workplaceVec = getWorkplaceVec(type);
+	auto workplaceVec = *getWorkplaceVec(type);
 
 	auto result = find_if(workplaceVec.begin(), workplaceVec.end(), 
 			[ID](auto workplace) {
@@ -78,26 +78,27 @@ std::vector<Workplace>::iterator Cinema::findWorkplace(unsigned ID, WorkplaceTyp
 	return result;
 }
 
-std::vector<Workplace>& Cinema::getWorkplaceVec(WorkplaceType type) {
-	std::vector<Workplace>& workplaceVec = ticketCounters;
+std::vector<Workplace>* Cinema::getWorkplaceVec(WorkplaceType type) {
+	std::vector<Workplace>* workplaceVec = nullptr;
 	switch (type) {
 		case WorkplaceType::ticketCounter:
+			workplaceVec = &ticketCounters;
 			break;
 		case WorkplaceType::foodCounter:
-			workplaceVec = foodCounters;
+			workplaceVec = &foodCounters;
 			break;
 		case WorkplaceType::janitorialCloset:
-			workplaceVec = janitorClosets;
+			workplaceVec = &janitorClosets;
 			break;
 		case WorkplaceType::other:
-			workplaceVec = otherWorkplaces;
+			workplaceVec = &otherWorkplaces;
 			break;
 	}
 	return workplaceVec;
 }
 
 bool Cinema::isWorkplace(unsigned ID, WorkplaceType type) {
-	auto workplaceVec = getWorkplaceVec(type);
+	auto workplaceVec = *getWorkplaceVec(type);
 	auto result = findWorkplace(ID, type);
 	return (result != workplaceVec.end());
 }
@@ -178,7 +179,7 @@ void Cinema::printSchedule()
 		room.printSchedule();
     }
 }
-void Cinema::findShowings(std::string movieName, unsigned howManyTickets)
+bool Cinema::findShowings(std::string movieName, unsigned howManyTickets)
 {
 	for (ScreeningRoom& room : screeningRooms)
 	{
@@ -192,12 +193,14 @@ void Cinema::findShowings(std::string movieName, unsigned howManyTickets)
                 if (showing.getFreeChairs() >= howManyTickets)
 				{
 					buyTickets(room.getName(), showing.getName(), showing.getDay(), showing.getHour(), howManyTickets);
+					return true;
 				}
+
             }
         }
 		}
 	}
-	std::cout << "There is nothing available at the moment" << std::endl;
+	return false;
 }
 void Cinema::buyTickets(std::string roomName, std::string movieName, Weekday day, unsigned int hour, unsigned int numberOfTickets)
 {
@@ -237,3 +240,32 @@ void Cinema::buyTickets(std::string roomName, std::string movieName, Weekday day
 void Cinema::addAvailabilityForAll(Weekday day) {
 	employees.addAvailabilityForAll(day);
 }
+
+bool Cinema::checkWorking(std::vector<std::string> names, unsigned hour, Weekday day) {
+	for (std::string employee : names) {
+		if (employees.isWorking(employee, hour, day)) {
+			return true;
+		}
+	}
+	return false;
+}
+
+void Cinema::updateWorkingCounters(unsigned hour, Weekday day) {
+	for (auto type : workplaceTypes) {
+		auto& workplaceVec = *getWorkplaceVec(type);
+		for (auto& workplace : workplaceVec) {
+			auto names = workplace.getAssignedEmployees();
+			if (checkWorking(names, hour, day)) {
+				workplace.setWorking(true);
+			} else {
+				workplace.setWorking(false);
+			}
+		}
+	}
+}
+
+bool Cinema::isWorking(WorkplaceType type, unsigned ID) {
+	auto result = findWorkplace(ID, type);
+	return result -> isWorking();
+}
+

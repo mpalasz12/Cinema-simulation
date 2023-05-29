@@ -77,6 +77,10 @@ void Worker::removeAvailability(Weekday day) {
 	}
 }
 
+bool Worker::isWorking(Weekday day, unsigned hour) {
+	return schedule.isWorkingTime(day, hour);
+}
+
 void Worker::salaryWithoutBonus(unsigned int timeWorked) {
 	salary = timeWorked * wage;
 }
@@ -118,8 +122,8 @@ std::ostream& operator<<(std::ostream& os, Worker worker) {
 // TICKET SELLER
 // -----------
 
-TicketSeller::TicketSeller(std::string name, unsigned short hours, unsigned short cashID) :
-	Worker(name, hours), cashID(cashID) {
+TicketSeller::TicketSeller(std::string name, unsigned short hours) :
+	Worker(name, hours){
 	type = employeeType::ticketSeller;
 	wage = SELLER_WAGE;
 	salary = 0;

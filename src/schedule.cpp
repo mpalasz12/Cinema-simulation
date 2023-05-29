@@ -85,3 +85,8 @@ Day Schedule::assembleDay(Weekday day, unsigned short startTime, unsigned short 
 	return Day(startTime, endTime);
 }
 
+bool Schedule::isWorkingTime(Weekday day, unsigned hour) {
+	unsigned startTime = getDay(day).getStartTime();
+	unsigned endTime = getDay(day).getEndTime();
+	return (startTime <= hour && hour < endTime);
+}

@@ -22,14 +22,15 @@ class Register {
 		Register(Register&&) = default;
 
 		void addWorker(std::string name, unsigned short hours);
-		void addTicketSeller(std::string name, unsigned short hours, unsigned short cashID);
+		void addTicketSeller(std::string name, unsigned short hours);
 		void addFoodSeller(std::string name, unsigned short hours);
 		void addJanitor(std::string name, unsigned short hours);
 
-		Worker findWorkerByName(std::string name);
+		Worker& findWorkerByName(std::string name);
 		unsigned calculateTotalSalary();
 
 		bool isWorker(std::string name);
+		bool isWorking(std::string name, unsigned hour, Weekday day);
 		std::string workersString();
 
 		void addAvailabilityFor(std::string name, Weekday day);

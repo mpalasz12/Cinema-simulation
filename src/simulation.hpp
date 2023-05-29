@@ -5,17 +5,16 @@
 #include "register.hpp"
 #include "schedule.hpp"
 #include "simlog.hpp"
-
-// tego jeszcze nie robie bo by wypadalo zeby byly wszystkie klasy zwiazane z kinem
+#include "time.h"
 
 class Simulation {
 	private:
 		Cinema cinema;
 		unsigned currentStep;
 		SimLog simLog;
-		unsigned short time;
+		Time time;
 	public:
-		Simulation(Cinema cinema);
+		Simulation(std::string cinemaName, unsigned short opening, unsigned short closing);
 
 		unsigned getCurrentStep();
 		void setCurrentStep(unsigned value);
@@ -25,7 +24,11 @@ class Simulation {
 		void runStep();
 
 		void prepareWeek();
+		void prepareDay();
 
 		void addToLog(std::string log);
 		std::string getStepLog();
+
+		void stepCounters();
+		void stepMovieRooms();
 };

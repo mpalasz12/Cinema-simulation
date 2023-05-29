@@ -29,7 +29,7 @@ class Cinema {
 
 		// private methods
 		std::vector<Workplace>::iterator findWorkplace(unsigned ID, WorkplaceType type);
-		std::vector<Workplace>& getWorkplaceVec(WorkplaceType type);
+		std::vector<Workplace>* getWorkplaceVec(WorkplaceType type);
 	public:
 
 		// constructor(s)
@@ -61,9 +61,12 @@ class Cinema {
 		void setScheduleForWeek(std::string path);
 		void printSchedule();
 
-		void findShowings(std::string movieName, unsigned int howManyTickets);
+		bool findShowings(std::string movieName, unsigned int howManyTickets);
 		void buyTickets(std::string roomName, std::string movieName, Weekday day, unsigned int hour, unsigned int numberOfTickets);
 
 		void addAvailabilityForAll(Weekday day);
+		bool checkWorking(std::vector<std::string> names, unsigned hour, Weekday day);
+		void updateWorkingCounters(unsigned hour, Weekday day);
 
+		bool isWorking(WorkplaceType type, unsigned ID);
 };

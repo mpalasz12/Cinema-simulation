@@ -95,7 +95,7 @@ TEST_CASE("Worker tests", "[worker]") {
 }
 
 TEST_CASE("Derived workers tests", "[worker]") {
-	TicketSeller seller("seller", 20, 1);
+	TicketSeller seller("seller", 20);
 	
 	CHECK(seller.getName() == "seller");
 	CHECK(seller.getWage() == 20);
@@ -132,7 +132,7 @@ TEST_CASE("Register tests", "[register]") {
 	Register workers;
 	workers.addWorker("john", 20);
 	workers.addWorker("mark", 20);
-	workers.addTicketSeller("david", 20, 2);
+	workers.addTicketSeller("david", 20);
 	workers.addJanitor("anna", 20);
 
 	SECTION("finding tests") {
