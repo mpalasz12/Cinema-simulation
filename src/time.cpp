@@ -3,7 +3,7 @@
 #include <string>
 #include <ostream>
 
-Time::Time(Weekday newDay, int newHour):
+Time::Time(Weekday newDay, unsigned int newHour):
     day(newDay),
     hour(newHour)
 {};
@@ -12,7 +12,7 @@ Weekday Time::getDay()
 {
     return day;
 }
-int Time::getHour()
+unsigned int Time::getHour()
 {
     return hour;
 }
@@ -20,7 +20,7 @@ void Time::setDay(Weekday newDay)
 {
     day = newDay;
 }
-void Time::setHour(int newHour)
+void Time::setHour(unsigned int newHour)
 {
     hour = newHour;
 }

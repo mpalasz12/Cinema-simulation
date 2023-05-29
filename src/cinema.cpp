@@ -167,7 +167,7 @@ void Cinema::setScheduleForWeek()
 {
 	for (ScreeningRoom& room : screeningRooms) 
 	{
-		room.fillSchedule();
+		room.fillSchedule(openingHour, closingHour);
     }
 }
 void Cinema::printSchedule()
@@ -178,7 +178,28 @@ void Cinema::printSchedule()
 		room.printSchedule();
     }
 }
-void Cinema::buyTickets(std::string roomName, std::string movieName, Weekday day, int hour, int numberOfTickets)
+void Cinema::findShowings(std::string movieName, unsigned howManyTickets)
+{
+	for (ScreeningRoom& room : screeningRooms)
+	{
+		for(int x=0; x<7; x++)
+		{
+			std::vector<Showing>& schedule = room.getSchedule(static_cast<int>(x));
+			for (Showing& showing : schedule)
+        {
+            if (showing.getName() == movieName)
+            {
+                if (showing.getFreeChairs() >= howManyTickets)
+				{
+					buyTickets(room.getName(), showing.getName(), showing.getDay(), showing.getHour(), howManyTickets);
+				}
+            }
+        }
+		}
+	}
+	std::cout << "There is nothing available at the moment" << std::endl;
+}
+void Cinema::buyTickets(std::string roomName, std::string movieName, Weekday day, unsigned int hour, unsigned int numberOfTickets)
 {
     for (ScreeningRoom& room : screeningRooms) 
     {
@@ -205,7 +226,7 @@ void Cinema::buyTickets(std::string roomName, std::string movieName, Weekday day
                 }
             }
             std::cout << "Movie not found" << std::endl;
-			break;
+			return;
         }
     }
 
