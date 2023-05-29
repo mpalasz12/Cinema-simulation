@@ -6,15 +6,15 @@ class Time
 {
 private:
     Weekday day;
-    int hour;
+    unsigned int hour;
 public:
-    Time(Weekday newDay, int newHour);
+    Time(Weekday newDay, unsigned int newHour);
 
     Weekday getDay();
-    int getHour();
+    unsigned int getHour();
 
 	void setDay(Weekday newDay);
-	void setHour(int newHour);
+	void setHour(unsigned int newHour);
 
     friend std::ostream& operator<<(std::ostream& os, const Time& time);
 };

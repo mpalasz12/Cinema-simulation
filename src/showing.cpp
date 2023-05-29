@@ -13,7 +13,7 @@ Showing::Showing(std::string newName, Time newDate, int newLength, double newPri
     }
     length = hours;
 }
-void Showing::setFreeChairs(int newFreeChairs)
+void Showing::setFreeChairs(unsigned int newFreeChairs)
 {
     freeChairs = newFreeChairs;
 }
@@ -25,7 +25,7 @@ int Showing::getLength()
 {
     return length;
 }
-int Showing::getFreeChairs()
+unsigned int Showing::getFreeChairs()
 {
     return freeChairs;
 }
@@ -37,7 +37,7 @@ Weekday Showing::getDay()
 {
     return date.getDay();
 }
-int Showing::getHour() 
+unsigned int Showing::getHour() 
 {
     return date.getHour();
 }

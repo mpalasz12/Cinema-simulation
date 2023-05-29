@@ -9,19 +9,19 @@ private:
     std::string name;
     Time date;
     unsigned int length;
-    int freeChairs;
+    unsigned int freeChairs;
     double price;
 public:
     Showing(std::string newName, Time newDate, int newLength, double newPrice);
 
     std::string getName();
     int getLength();
-    int getFreeChairs();
+    unsigned int getFreeChairs();
     double getPrice();
     Weekday getDay();
-    int getHour();
+    unsigned int getHour();
 
-    void setFreeChairs(int newFreeChairs);
+    void setFreeChairs(unsigned int newFreeChairs);
 
     friend std::ostream& operator<<(std::ostream& os, const Showing& showing);
 };
