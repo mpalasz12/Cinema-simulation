@@ -1,13 +1,10 @@
 #include "cinema.hpp"
+#include "read_from_file.h"
 #include <iostream>
 
 int main()
 {
-    Cinema cinema("nazwa1", 7, 22);
-    cinema.addScreeningRoom("sala1", 20);
-    cinema.setScheduleForWeek();
-    cinema.printSchedule();
-    std::cout << "----------------" << std::endl;
-    cinema.findShowings("Forrest", 3);
+    Cinema cinema = createCinema("cinema.txt");
+    cinema.setScheduleForWeek("movies.txt");
     cinema.printSchedule();
 }
