@@ -5,25 +5,30 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "g++ - Build and debug active file",
+            "name": "g++.exe - Kompiluj i debuguj aktywny plik",
             "type": "cppdbg",
             "request": "launch",
+            //Wersja dla Windowsa:
+            // "program": "${workspaceFolder}\\${workspaceFolderBasename}.exe",
+            //Wersja dla Linuxa:
             "program": "${workspaceFolder}/${workspaceFolderBasename}",
-            "args": [],
+            "args": ["17.3", "29.7"], //tu należy podać argumenty wywołania programu
             "stopAtEntry": false,
             "cwd": "${fileDirname}",
             "environment": [],
             "externalConsole": false,
             "MIMode": "gdb",
+            // "miDebuggerPath": "C:\\Program Files\\mingw-w64\\x86_64-8.1.0-posix-seh-rt_v6-rev0\\mingw64\\bin\\gdb.exe",
+            // "miDebuggerPath": "C:\\msys64\\mingw64\\bin\\gdb.exe",
+            "miDebuggerPath": "/usr/bin/gdb",
             "setupCommands": [
                 {
-                    "description": "Enable pretty-printing for gdb",
+                    "description": "Włącz formatowanie kodu dla gdb",
                     "text": "-enable-pretty-printing",
                     "ignoreFailures": true
                 }
             ],
-            "preLaunchTask": "C/C++: g++ build active file",
-            "miDebuggerPath": "/usr/bin/gdb"
+            "preLaunchTask": "C/C++: g++.exe kompiluj aktywny plik"
         }
     ]
 }

@@ -178,7 +178,7 @@ void Cinema::printSchedule()
 		room.printSchedule();
     }
 }
-void Cinema::buyTickets(std::string roomName, std::string movieName, Weekday day, int hour, int numberOfTickets)
+void Cinema::buyTickets(std::string roomName, std::string movieName, Weekday day, unsigned int hour, unsigned int numberOfTickets)
 {
     for (ScreeningRoom& room : screeningRooms) 
     {
@@ -205,7 +205,7 @@ void Cinema::buyTickets(std::string roomName, std::string movieName, Weekday day
                 }
             }
             std::cout << "Movie not found" << std::endl;
-			break;
+			return;
         }
     }
 
