@@ -3,7 +3,7 @@
 
 int main()
 {
-    Cinema cinema("nazwa1", 7, 30);
+    Cinema cinema("nazwa1", 7, 22);
     cinema.addScreeningRoom("sala1", 20);
     cinema.setScheduleForWeek();
     cinema.printSchedule();

@@ -167,7 +167,7 @@ void Cinema::setScheduleForWeek()
 {
 	for (ScreeningRoom& room : screeningRooms) 
 	{
-		room.fillSchedule();
+		room.fillSchedule(openingHour, closingHour);
     }
 }
 void Cinema::printSchedule()
