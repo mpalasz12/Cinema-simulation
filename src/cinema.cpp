@@ -178,9 +178,8 @@ void Cinema::printSchedule()
 		room.printSchedule();
     }
 }
-std::vector<Showing> Cinema::findShowings(std::string movieName)
+void Cinema::findShowings(std::string movieName, unsigned howManyTickets)
 {
-	std::vector<Showing> result;
 	for (ScreeningRoom& room : screeningRooms)
 	{
 		for(int x=0; x<7; x++)
@@ -190,12 +189,15 @@ std::vector<Showing> Cinema::findShowings(std::string movieName)
         {
             if (showing.getName() == movieName)
             {
-                result.push_back(showing);
+                if (showing.getFreeChairs() >= howManyTickets)
+				{
+					buyTickets(room.getName(), showing.getName(), showing.getDay(), showing.getHour(), howManyTickets);
+				}
             }
         }
 		}
 	}
-	return result;
+	std::cout << "There is nothing available at the moment" << std::endl;
 }
 void Cinema::buyTickets(std::string roomName, std::string movieName, Weekday day, unsigned int hour, unsigned int numberOfTickets)
 {
