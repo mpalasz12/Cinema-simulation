@@ -61,3 +61,11 @@ unsigned Workplace::assignedNum() {
 std::vector<std::string> Workplace::getAssignedEmployees() {
 	return assignedEmployees;
 }
+
+void Workplace::addToQueue(Customer* client) {
+	queue.push_back(client);
+}
+
+void Workplace::removeFirstFromQueue() {
+	queue.erase(queue.begin());
+}

@@ -3,6 +3,7 @@
 #include <vector>
 #include "worker.hpp"
 #include "enums.hpp"
+#include "customer.h"
 
 class Workplace {
 	private:
@@ -10,6 +11,7 @@ class Workplace {
 		WorkplaceType type;
 		std::vector<std::string> assignedEmployees;
 		std::vector<std::string>::iterator findEmployee(std::string name);
+		std::vector<Customer*> queue;
 		bool working;
 
 	public:
@@ -23,6 +25,8 @@ class Workplace {
 
 		bool isWorking();
 		void setWorking(bool value);
+		void addToQueue(Customer* client);
+		void removeFirstFromQueue();
 
 		bool isAssigned(std::string name);
 		

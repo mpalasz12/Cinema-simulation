@@ -3,6 +3,7 @@
 #include "cinema.hpp"
 #include"screening_room.h"
 #include "workplace.hpp"
+#include "random_movies.h"
 
 Cinema::Cinema(std::string name, unsigned short opening, unsigned short closing) :
 	name(name), openingHour(opening), closingHour(closing) {
@@ -30,6 +31,14 @@ void Cinema::setOpeningHour(unsigned short hour) {
 
 void Cinema::setClosingHour(unsigned short hour) {
 	closingHour = hour;
+}
+
+unsigned Cinema::getCustomerNum() {
+	return customerNum;
+}
+
+void Cinema::setCustomerNum(unsigned int newValue) {
+	customerNum = newValue;
 }
 
 
@@ -269,3 +278,15 @@ bool Cinema::isWorking(WorkplaceType type, unsigned ID) {
 	return result -> isWorking();
 }
 
+void Cinema::addRandomCustomer() {
+	unsigned age = std::rand() % 80 + 5;
+	unsigned ticketAmt = std::rand() % 5 + 1;
+	std::string movieTitle = randomMovie().getName();
+
+	customerNum++;
+
+	Customer customer(customerNum, age, movieTitle, ticketAmt);
+	customers.push_back(customer);
+	
+	// get random counter and assign the customer pointer to it
+}

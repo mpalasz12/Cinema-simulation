@@ -42,5 +42,10 @@ void Simulation::prepareDay() {
 void Simulation::runStep() {
 	// tu cogodzinne zmiany
 	cinema.updateWorkingCounters(time.getHour(), time.getDay());
+	unsigned newCustomers = std::rand() % 50 + 10;
+	for (unsigned i; i <= newCustomers; i++) {
+		cinema.addRandomCustomer();
+	}
+	
 }
 

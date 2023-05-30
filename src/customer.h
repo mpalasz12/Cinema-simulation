@@ -4,19 +4,19 @@
 class Customer
 {
 private:
-    std::string name;
+	unsigned ID;
     unsigned int age;
     std::string movieName;
     unsigned int howManyTickets;
 public:
-    Customer(std::string newName, unsigned int newAge, std::string newMovieName, unsigned int newHowManyTickets);
+    Customer(unsigned int ID, unsigned int newAge, std::string newMovieName, unsigned int newHowManyTickets);
 
-    std::string getName();
+    unsigned getID();
     unsigned int getAge();
     std::string getMovieName();
     unsigned int getHowManyTickets();
 
-    void setName(std::string newName);
+    void setID(unsigned newValue);
     void setAge(unsigned int newAge);
     void setMovieName(std::string newMovieName);
     void setHowManyTickets(unsigned int newHowManyTickets);

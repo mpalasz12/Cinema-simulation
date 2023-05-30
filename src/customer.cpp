@@ -1,14 +1,14 @@
 #include "customer.h"
 
-Customer::Customer(std::string newName, unsigned int newAge, std::string newMovieName, unsigned int newHowManyTickets):
-    name(newName),
+Customer::Customer(unsigned int ID, unsigned int newAge, std::string newMovieName, unsigned int newHowManyTickets):
+    ID(ID),
     age(newAge),
     movieName(newMovieName),
     howManyTickets(newHowManyTickets)
 {}
-std::string Customer::getName()
+unsigned Customer::getID()
 {
-    return name;
+    return ID;
 }
 unsigned int Customer::getAge()
 {
@@ -22,9 +22,9 @@ unsigned int Customer::getHowManyTickets()
 {
     return howManyTickets;
 }
-void Customer::setName(std::string newName)
+void Customer::setID(unsigned newValue)
 {
-    name = newName;
+    ID = newValue;
 }
 void Customer::setAge(unsigned int newAge)
 {

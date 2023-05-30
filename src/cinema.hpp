@@ -1,11 +1,13 @@
 #pragma once
 #include <string>
 #include <vector>
+#include <cstdlib>
 #include "register.hpp"
 #include "data.h"
 #include "enums.hpp"
 #include "workplace.hpp"
 #include "screening_room.h"
+#include "customer.h"
 
 
 /*! TODO: add class fields related to other cinema classes
@@ -18,6 +20,7 @@ class Cinema {
 		std::string name;
 		unsigned short openingHour;
 		unsigned short closingHour;
+		unsigned customerNum;
 
 		Register employees;
 		std::vector<ScreeningRoom> screeningRooms;
@@ -26,6 +29,8 @@ class Cinema {
 		std::vector<Workplace> ticketCounters;
 		std::vector<Workplace> foodCounters;
 		std::vector<Workplace> janitorClosets;
+
+		std::vector<Customer> customers;
 
 		// private methods
 		std::vector<Workplace>::iterator findWorkplace(unsigned ID, WorkplaceType type);
@@ -39,10 +44,14 @@ class Cinema {
 		std::string getName();
 		void setName(std::string newName);
 
+
 		unsigned short getOpeningHour();
 		unsigned short getClosingHour();
 		void setOpeningHour(unsigned short hour);
 		void setClosingHour(unsigned short hour);
+
+		unsigned getCustomerNum();
+		void setCustomerNum(unsigned newValue);
 
 		// collection manipulation
 		void addEmployee(std::string name, employeeType type, unsigned short hours);
@@ -51,6 +60,8 @@ class Cinema {
 		void addFoodCounter();
 		void addJanitorCloset();
 
+		void addRandomCustomer();
+		
 		bool isWorkplace(unsigned ID, WorkplaceType type);
 		bool hasEmployee(unsigned ID, WorkplaceType type);
 
@@ -69,4 +80,5 @@ class Cinema {
 		void updateWorkingCounters(unsigned hour, Weekday day);
 
 		bool isWorking(WorkplaceType type, unsigned ID);
+		
 };
