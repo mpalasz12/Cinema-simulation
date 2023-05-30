@@ -173,11 +173,11 @@ void Cinema::addScreeningRoom(std::string newName, int newCapacity)
 	ScreeningRoom screeningRoom(newName, newCapacity);
 	screeningRooms.push_back(screeningRoom);
 }
-void Cinema::setScheduleForWeek()
+void Cinema::setScheduleForWeek(std::string path)
 {
 	for (ScreeningRoom& room : screeningRooms) 
 	{
-		room.fillSchedule(openingHour, closingHour);
+		room.fillSchedule(openingHour, closingHour, path);
     }
 }
 void Cinema::printSchedule()

@@ -18,7 +18,7 @@ public:
     int getCapacity();
     std::vector<Showing>& getSchedule(int index);
 
-    void fillSchedule(unsigned short openinig, unsigned short closing);
+    void fillSchedule(unsigned short openinig, unsigned short closing, std::string path);
     void printSchedule();
 
     friend std::ostream& operator<<(std::ostream& os, const ScreeningRoom& screeningRoom);

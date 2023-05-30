@@ -20,7 +20,7 @@ std::vector<Showing>& ScreeningRoom::getSchedule(int index)
 {
     return schedule[index];
 }
-void ScreeningRoom::fillSchedule(unsigned short opening, unsigned short closing)
+void ScreeningRoom::fillSchedule(unsigned short opening, unsigned short closing, std::string path)
 {
     for(int i=0; i<7; i++)
     {
@@ -49,7 +49,7 @@ void ScreeningRoom::fillSchedule(unsigned short opening, unsigned short closing)
             day = Weekday::Sunday;
             break;
         }
-        Movie movie = randomMovie();
+        Movie movie = randomMovie(path);
         int limit = opening;
         Time time(day, limit);
         Showing added_show(movie.getName(), time, movie.getDuration(), movie.getPrice());
@@ -58,7 +58,7 @@ void ScreeningRoom::fillSchedule(unsigned short opening, unsigned short closing)
         while(limit + added_show.getLength() <= closing)
         {
             limit += added_show.getLength();
-            movie = randomMovie();
+            movie = randomMovie(path);
             time = Time(day, limit);
             added_show = Showing(movie.getName(), time, movie.getDuration(), movie.getPrice());
             added_show.setFreeChairs(capacity);
@@ -102,7 +102,7 @@ void ScreeningRoom::printSchedule()
                 std::cout << std::endl;
                 break;
         }
-        for (size_t x = 0; x < schedule[i].size(); x++)  // Poprawione i -> x
+        for (size_t x = 0; x < schedule[i].size(); x++) 
         {
             std::cout << schedule[i][x];
         }

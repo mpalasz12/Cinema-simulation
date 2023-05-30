@@ -9,6 +9,7 @@
                 "-fdiagnostics-color=always",
                 "-g",
                 "${workspaceFolder}/showing.cpp",
+                "${workspaceFolder}/read_from_file.cpp",
                 "${workspaceFolder}/customer.cpp",
                 "${workspaceFolder}/testowy.cpp",
                 "${workspaceFolder}/cinema.cpp",

@@ -1,0 +1,2 @@
+nazwa1,8,worker
+nazwa2,6,ticketSeller

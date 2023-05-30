@@ -3,4 +3,4 @@
 #include "movie.h"
 
 std::vector<int> generateNonRepeatingRandomNumber(int minRange, int maxRange);
-Movie randomMovie();
+Movie randomMovie(std::string path);

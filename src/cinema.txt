@@ -1,0 +1,3 @@
+Multikino,8,20
+Sala1,15
+Sala2,20

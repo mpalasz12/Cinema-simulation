@@ -11,7 +11,7 @@
 int generateRandomNumber(int minRange, int maxRange)
 {
     if (minRange > maxRange) {
-        std::cerr << "Nieprawidłowy zakres liczb." << std::endl;
+        std::cerr << "Wrong range of numbers." << std::endl;
         return 0;
     }
 
@@ -21,12 +21,12 @@ int generateRandomNumber(int minRange, int maxRange)
     return dis(gen);
 }
 
-Movie randomMovie()
+Movie randomMovie(std::string path)
 {
-    DataBase data;
     std::vector<std::string> lines;
-    std::ifstream file("movies.txt");
-    if (file.is_open()) {
+    std::ifstream file(path);
+    if (file.is_open()) 
+    {
         std::string line;
         while (std::getline(file, line)) {
             lines.push_back(line);
@@ -34,7 +34,7 @@ Movie randomMovie()
         file.close();
     }
     else {
-        std::cout << "Nie można otworzyć pliku." << std::endl;
+        std::cout << "Can't open a file." << std::endl;
     }
 
     int minRange = 0;
