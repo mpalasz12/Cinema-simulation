@@ -69,3 +69,11 @@ void Workplace::addToQueue(Customer* client) {
 void Workplace::removeFirstFromQueue() {
 	queue.erase(queue.begin());
 }
+
+unsigned Workplace::getQueueSize() {
+	return queue.size();
+}
+
+Customer* Workplace::getFirstCustomer() {
+	return *queue.begin();
+}

@@ -34,6 +34,11 @@ class Workplace {
 		bool unassignEmployee(std::string name);
 
 		unsigned assignedNum();
-		
+
+		unsigned getQueueSize();
+		Customer* getFirstCustomer();
+
 		std::vector<std::string> getAssignedEmployees();
+
+		void sell();
 };

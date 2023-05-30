@@ -60,7 +60,7 @@ class Cinema {
 		void addFoodCounter();
 		void addJanitorCloset();
 
-		void addRandomCustomer();
+		void addRandomCustomer(std::string moviePath);
 		
 		bool isWorkplace(unsigned ID, WorkplaceType type);
 		bool hasEmployee(unsigned ID, WorkplaceType type);
@@ -80,5 +80,6 @@ class Cinema {
 		void updateWorkingCounters(unsigned hour, Weekday day);
 
 		bool isWorking(WorkplaceType type, unsigned ID);
+		std::string sellTickets();
 		
 };

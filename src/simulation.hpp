@@ -13,12 +13,16 @@ class Simulation {
 		unsigned currentStep;
 		SimLog simLog;
 		Time time;
+		std::string moviePath;
 	public:
 		Simulation(std::string cinemaName, unsigned short opening, unsigned short closing);
 
 		unsigned getCurrentStep();
 		void setCurrentStep(unsigned value);
 		void increaseStep();
+
+		std::string getMoviePath();
+		void setMoviePath(std::string path);
 
 		void startSimulation();
 		void runStep();

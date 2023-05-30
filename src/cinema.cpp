@@ -1,5 +1,6 @@
 #include <iostream>
 #include <algorithm>
+#include <random>
 #include "cinema.hpp"
 #include"screening_room.h"
 #include "workplace.hpp"
@@ -278,15 +279,47 @@ bool Cinema::isWorking(WorkplaceType type, unsigned ID) {
 	return result -> isWorking();
 }
 
-void Cinema::addRandomCustomer() {
+void Cinema::addRandomCustomer(std::string moviePath) {
 	unsigned age = std::rand() % 80 + 5;
 	unsigned ticketAmt = std::rand() % 5 + 1;
-	std::string movieTitle = randomMovie().getName();
+	std::string movieTitle = randomMovie(moviePath).getName();
 
 	customerNum++;
 
 	Customer customer(customerNum, age, movieTitle, ticketAmt);
 	customers.push_back(customer);
+
+	unsigned counterNum = std::rand() % ticketCounters.size();
+	Workplace& counter = ticketCounters.at(counterNum);
+	counter.addToQueue(&customers.back());
 	
 	// get random counter and assign the customer pointer to it
+}
+
+std::string Cinema::sellTickets() {
+	std::string result;
+	// iterate for every ticket counter
+	for (auto& counter : ticketCounters) {
+		// check if it's working
+		if (counter.isWorking()) {
+
+			// get a random number of customers to serve each hour
+			unsigned customersToServe = std::rand() % 15 + 10;
+			auto customer = counter.getFirstCustomer();
+			while (customersToServe != 0 || counter.getQueueSize() != 0) {
+				if (findShowings(customer -> getMovieName(), customer -> getHowManyTickets())) {
+					result.append("Customer (ID: ");
+					result.append(std::to_string(customer -> getID()));
+					result.append("), bought ");
+					result.append(std::to_string(customer -> getHowManyTickets()));
+					result.append(" tickets for ");
+					result.append(customer -> getMovieName());
+					result.append("\n");
+					
+				}
+				counter.removeFirstFromQueue();
+			}
+		}
+	}
+	return result;
 }

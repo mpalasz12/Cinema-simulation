@@ -1,2 +1,4 @@
 *.exe
 src/*.exe
+
+compile_flags.txt

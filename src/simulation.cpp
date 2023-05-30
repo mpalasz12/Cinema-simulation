@@ -17,6 +17,14 @@ void Simulation::increaseStep() {
 	currentStep++;
 }
 
+std::string Simulation::getMoviePath() {
+	return moviePath;
+}
+
+void Simulation::setMoviePath(std::string path) {
+	moviePath = path;
+}
+
 void Simulation::startSimulation() {
 	return;
 }
@@ -32,7 +40,7 @@ std::string Simulation::getStepLog() {
 void Simulation::prepareWeek() {
 	// tu mają sie wywoływać metody z cinema tworzące plany tygodniowe
 	cinema.prepareEmployeeSchedules();
-	cinema.setScheduleForWeek();
+	cinema.setScheduleForWeek(moviePath);
 }
 
 void Simulation::prepareDay() {
@@ -42,10 +50,18 @@ void Simulation::prepareDay() {
 void Simulation::runStep() {
 	// tu cogodzinne zmiany
 	cinema.updateWorkingCounters(time.getHour(), time.getDay());
+
+	// get random amount of customers in range (10, 60)
 	unsigned newCustomers = std::rand() % 50 + 10;
+
 	for (unsigned i; i <= newCustomers; i++) {
-		cinema.addRandomCustomer();
+		// create the employees and get them in a random queue
+		cinema.addRandomCustomer(moviePath);
+
 	}
-	
+
+	// sell tickets and add the information to the log
+	addToLog(cinema.sellTickets());
+
 }
 
