@@ -20,6 +20,7 @@
                 "${workspaceFolder}/catch_config.cpp",
                 //trzeba również dołączyć pliki znajdujące się "poziom wyżej", ale bez funkcji main (dlatego nie ma tu ../*.cpp, tylko wskazany jest konkretny plik)
                 "${workspaceFolder}/../../src/movie.cpp",
+                "${workspaceFolder}/../../src/random_movies.cpp",
                 "-o",
                 "${workspaceFolder}/${workspaceFolderBasename}",
                 "-Wall",
