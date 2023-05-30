@@ -1,0 +1,42 @@
+{
+    "tasks": [
+        {
+            "type": "cppbuild",
+            "label": "C/C++: g++.exe kompiluj aktywny plik",
+            // "command": "C:\\msys64\\mingw64\\bin\\g++.exe",
+            "command": "/usr/bin/g++",
+            "args": [
+                "-fdiagnostics-color=always",
+                "-g",
+                //Wersja dla Windowsa:
+                // "${workspaceFolder}\\*.cpp",
+                // trzeba również dołączyć pliki znajdujące się "poziom wyżej", ale bez funkcji main (dlatego nie ma tu ..\\*.cpp, tylko wskazany jest konkretny plik)
+                // "${workspaceFolder}\\..\\adder.cpp",
+                // "-o",
+                // "${workspaceFolder}\\${workspaceFolderBasename}.exe",
+                //Wersja dla Linuxa:
+                "${workspaceFolder}/screening_room_tests.cpp",
+                "${workspaceFolder}/catch_amalgamated.cpp",
+                "${workspaceFolder}/catch_config.cpp",
+                //trzeba również dołączyć pliki znajdujące się "poziom wyżej", ale bez funkcji main (dlatego nie ma tu ../*.cpp, tylko wskazany jest konkretny plik)
+                "${workspaceFolder}/../../src/screening_room.cpp",
+                "-o",
+                "${workspaceFolder}/${workspaceFolderBasename}",
+                "-Wall",
+                "-Werror"
+            ],
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "detail": "Zadanie wygenerowane przez debuger."
+        }
+    ],
+    "version": "2.0.0"
+}
