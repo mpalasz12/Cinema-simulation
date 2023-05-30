@@ -1,35 +1,32 @@
-#include "src/enums.hpp"
-#include "src/workplace.hpp"
-#include "src/cinema.hpp"
 #include <iostream>
-#include <vector>
-#include <chrono>
 #include <sstream>
-#include <stdexcept>
+#include <string>
 
-int main(int argc, char *argv[]) {
-	Cinema cinema("cinema", 10, 22);
-	cinema.addEmployee("john", employeeType::worker, 20);
-	cinema.addEmployee("mark", employeeType::worker, 20);
-	cinema.addEmployee("david", employeeType::ticketSeller, 20);
-	cinema.addEmployee("anna", employeeType::janitor, 20);
-	cinema.addAvailabilityForAll(Weekday::Monday);
-	cinema.addAvailabilityForAll(Weekday::Tuesday);
-	cinema.addAvailabilityForAll(Weekday::Wednesday);
-	cinema.addAvailabilityForAll(Weekday::Thursday);
+int main(int argc, char *argv[]) 
+{
+	if(argc != 4)
+    {
+        std::cerr << "Incorrect number of command line arguments - expected 2, got " << argc << std::endl;
+        return 1;
+    }
 
-	cinema.addTicketCounter();
-	cinema.addTicketCounter();
-	cinema.addFoodCounter();
-	cinema.addJanitorCloset();
+	std::string cinemaData;
+	std::string movieData;
+	std::string employeeData;
 
-	cinema.prepareEmployeeSchedules();
-	cinema.prepareWorkplacesDay(Weekday::Monday);
+	std::stringstream stream;
+    stream << argv[1];
+	stream >> cinemaData;
+	stream.clear();
+
+	stream << argv[2];
+	stream >> movieData;
+	stream.clear();
+
+	stream << argv[3];
+	stream >> employeeData;
+
+	//Wywolanie symulacji z dodatkowymi zmiennymi, czyli sciezkami do odpowiednich plikow
 
 
-	cinema.updateWorkingCounters(19, Weekday::Monday);
-
-	if (cinema.isWorking(WorkplaceType::ticketCounter, 0)) {
-		std::cout << "essa" << std::endl;
-	}
 }
