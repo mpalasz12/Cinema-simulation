@@ -55,6 +55,7 @@ class Cinema {
 
 		// collection manipulation
 		void addEmployee(std::string name, employeeType type, unsigned short hours);
+		void addEmployeesFromFile(std::string path);
 
 		void addTicketCounter();
 		void addFoodCounter();

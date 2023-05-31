@@ -1,10 +1,13 @@
 #include <iostream>
 #include <algorithm>
 #include <random>
+#include <fstream>
+#include <sstream>
 #include "cinema.hpp"
 #include"screening_room.h"
 #include "workplace.hpp"
 #include "random_movies.h"
+#include "read_from_file.h"
 
 Cinema::Cinema(std::string name, unsigned short opening, unsigned short closing) :
 	name(name), openingHour(opening), closingHour(closing) {
@@ -60,7 +63,36 @@ void Cinema::addEmployee(std::string name, employeeType type, unsigned short hou
 			break;
 	}
 }
+void Cinema::addEmployeesFromFile(std::string path)
+{
+    std::ifstream file(path);
+    if (file.is_open()) 
+    {
+        std::string line;
+        std::string field;
+        std::string name;
+        unsigned hours;
+        employeeType type;
+        while (std::getline(file, line))
+        {
+            std::istringstream iss(line);
+            std::getline(iss, field, ',');
+            name = field;
 
+            std::getline(iss, field, ',');
+            hours = std::stoul(field);
+
+            std::getline(iss, field, ',');
+            type = convertToEmployeeType(field);
+
+			addEmployee(name, type, hours);
+        }
+        file.close();
+    }
+    else {
+        std::cout << "Can't open a file." << std::endl;
+    }
+}
 void Cinema::addTicketCounter() {
 	Workplace counter(ticketCounters.size(), WorkplaceType::ticketCounter);
 	ticketCounters.push_back(counter);
