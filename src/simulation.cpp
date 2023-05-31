@@ -111,7 +111,7 @@ std::string Simulation::runStep() {
 
 
 	// sell tickets and add the information to the log
-	addToLog(cinema.sellTickets());
+	addToLog(cinema.sellTickets(time));
 	addToLog(cinema.movieLogs(time));
 	log = getStepLog();
 	simLog.clearStepLog();

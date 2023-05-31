@@ -315,7 +315,7 @@ void Cinema::printSchedule()
 		room.printSchedule();
     }
 }
-bool Cinema::findShowings(std::string movieName, unsigned howManyTickets)
+bool Cinema::findShowings(std::string movieName, unsigned howManyTickets, Time time)
 {
 	for (ScreeningRoom& room : screeningRooms)
 	{
@@ -326,10 +326,16 @@ bool Cinema::findShowings(std::string movieName, unsigned howManyTickets)
         {
             if (showing.getName() == movieName)
             {
-                if (showing.getFreeChairs() >= howManyTickets)
+				if(time.getDay() >= showing.getDay())
 				{
-					buyTickets(room.getName(), showing.getName(), showing.getDay(), showing.getHour(), howManyTickets);
-					return true;
+					if(time.getHour() >= showing.getHour())
+					{
+						if (showing.getFreeChairs() >= howManyTickets)
+						{
+							buyTickets(room.getName(), showing.getName(), showing.getDay(), showing.getHour(), howManyTickets);
+							return true;
+						}
+					}
 				}
 
             }
@@ -436,7 +442,7 @@ void Cinema::addRandomCustomer(std::string moviePath) {
 	// get random counter and assign the customer pointer to it
 }
 
-std::string Cinema::sellTickets() {
+std::string Cinema::sellTickets(Time time) {
 	std::string result = "";
 	// iterate for every ticket counter
 	for (auto& counter : ticketCounters) {
@@ -451,7 +457,7 @@ std::string Cinema::sellTickets() {
 				servedID = counter.getFirstCustomer();
 				if (isCustomer(servedID)) {
 					auto customer = findCustomer(servedID);
-					if (findShowings(customer -> getMovieName(), customer -> getHowManyTickets())) {
+					if (findShowings(customer -> getMovieName(), customer -> getHowManyTickets(), time)) {
 						result.append("Customer (ID: ");
 						result.append(std::to_string(customer -> getID()));
 						result.append("), bought ");
