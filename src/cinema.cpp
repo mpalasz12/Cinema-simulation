@@ -194,6 +194,14 @@ std::vector<Workplace>* Cinema::getWorkplaceVec(WorkplaceType type) {
 	return workplaceVec;
 }
 
+std::vector<Customer>::iterator Cinema::findCustomer(unsigned ID) {
+	auto result = std::find_if(customers.begin(), customers.end(),
+			[ID](auto& customer) {
+				return customer.getID() == ID;
+			});
+	return result;
+}
+
 bool Cinema::isWorkplace(unsigned ID, WorkplaceType type) {
 	auto workplaceVec = *getWorkplaceVec(type);
 	auto result = findWorkplace(ID, type);
@@ -207,6 +215,12 @@ bool Cinema::hasEmployee(unsigned ID, WorkplaceType type) {
 	} else {
 		return false;
 	}
+
+}
+
+bool Cinema::isCustomer(unsigned ID) {
+	auto result = findCustomer(ID);
+	return result != customers.end();
 }
 
 void Cinema::prepareWorkplacesDay(Weekday day) {
@@ -415,23 +429,26 @@ void Cinema::addRandomCustomer(std::string moviePath) {
 
 	unsigned counterNum = generateRandomNumber(0, ticketCounters.size() - 1);
 	Workplace& counter = ticketCounters.at(counterNum);
-	counter.addToQueue(&customers.back());
+	counter.addToQueue(customer.getID());
 	
 	// get random counter and assign the customer pointer to it
 }
 
 std::string Cinema::sellTickets() {
-	std::string result;
+	std::string result = "";
 	// iterate for every ticket counter
 	for (auto& counter : ticketCounters) {
 		// check if it's working
 		if (counter.isWorking()) {
 
-			// get a random number of customers to serve each hour
+		// get a random number of customers to serve each hour
 			unsigned customersToServe = generateRandomNumber(10, 25);
-			if (counter.getQueueSize() != 0) {
-				auto customer = counter.getFirstCustomer();
-				while (customersToServe != 0 || counter.getQueueSize() != 0) {
+			unsigned servedID;
+			while (customersToServe != 0 && counter.getQueueSize() != 0) {
+				customersToServe--;
+				servedID = counter.getFirstCustomer();
+				if (isCustomer(servedID)) {
+					auto customer = findCustomer(servedID);
 					if (findShowings(customer -> getMovieName(), customer -> getHowManyTickets())) {
 						result.append("Customer (ID: ");
 						result.append(std::to_string(customer -> getID()));
@@ -440,10 +457,10 @@ std::string Cinema::sellTickets() {
 						result.append(" tickets for ");
 						result.append(customer -> getMovieName());
 						result.append("\n");
-						
 					}
-					counter.removeFirstFromQueue();
 				}
+				
+				counter.removeFirstFromQueue();
 			}
 		}
 	}

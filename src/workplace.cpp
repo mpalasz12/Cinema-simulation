@@ -62,18 +62,18 @@ std::vector<std::string> Workplace::getAssignedEmployees() {
 	return assignedEmployees;
 }
 
-void Workplace::addToQueue(Customer* client) {
+void Workplace::addToQueue(unsigned client) {
 	queue.push_back(client);
 }
 
 void Workplace::removeFirstFromQueue() {
-	queue.erase(queue.begin());
+	queue.pop_front();
 }
 
 unsigned Workplace::getQueueSize() {
 	return queue.size();
 }
 
-Customer* Workplace::getFirstCustomer() {
+unsigned Workplace::getFirstCustomer() {
 	return *(queue.begin());
 }

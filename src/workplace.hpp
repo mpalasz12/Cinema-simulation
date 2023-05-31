@@ -1,6 +1,7 @@
 #pragma once
 #include <string>
 #include <vector>
+#include <deque>
 #include "worker.hpp"
 #include "enums.hpp"
 #include "customer.h"
@@ -11,7 +12,7 @@ class Workplace {
 		WorkplaceType type;
 		std::vector<std::string> assignedEmployees;
 		std::vector<std::string>::iterator findEmployee(std::string name);
-		std::vector<Customer*> queue;
+		std::deque<unsigned> queue;
 		bool working;
 
 	public:
@@ -25,7 +26,7 @@ class Workplace {
 
 		bool isWorking();
 		void setWorking(bool value);
-		void addToQueue(Customer* client);
+		void addToQueue(unsigned client);
 		void removeFirstFromQueue();
 
 		bool isAssigned(std::string name);
@@ -36,7 +37,7 @@ class Workplace {
 		unsigned assignedNum();
 
 		unsigned getQueueSize();
-		Customer* getFirstCustomer();
+		unsigned getFirstCustomer();
 
 		std::vector<std::string> getAssignedEmployees();
 

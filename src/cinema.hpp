@@ -35,6 +35,7 @@ class Cinema {
 		// private methods
 		std::vector<Workplace>::iterator findWorkplace(unsigned ID, WorkplaceType type);
 		std::vector<Workplace>* getWorkplaceVec(WorkplaceType type);
+		std::vector<Customer>::iterator findCustomer(unsigned ID);
 	public:
 
 		// constructor(s)
@@ -66,6 +67,7 @@ class Cinema {
 		
 		bool isWorkplace(unsigned ID, WorkplaceType type);
 		bool hasEmployee(unsigned ID, WorkplaceType type);
+		bool isCustomer(unsigned ID);
 
 		// simulation related methods
 		void prepareWorkplacesDay(Weekday day);
