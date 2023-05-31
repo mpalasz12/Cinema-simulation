@@ -18,7 +18,14 @@ void Simulation::setCurrentStep(unsigned int value) {
 void Simulation::increaseStep() {
 	currentStep++;
 }
-
+std::string Simulation::getRoomsPath()
+{
+	return roomsPath;
+}
+void Simulation::setRoomsPath(std::string newPath)
+{
+	roomsPath = newPath;
+}
 std::string Simulation::getMoviePath() {
 	return moviePath;
 }
@@ -52,7 +59,7 @@ void Simulation::readWorkplacesFromFile() {
 }
 
 void Simulation::startSimulation() {
-	createCinemaFromFile();
+	addRoomsFromFile(roomsPath);
 	prepareWeek();
 	prepareDay();
 	return;
