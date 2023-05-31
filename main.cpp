@@ -35,6 +35,11 @@ int main(int argc, char *argv[])
 	sim.setMoviePath("src/movies.txt");
 	sim.setWorkplacePath("src/counter.txt");
 	sim.startSimulation();
-	std::cout << sim.runStep() << std::endl;
+	std::string answer;
+	while (true) {
+		std::cout << sim.runStep() << std::endl;
+		std::cin >> answer;
+
+	}
 
 }

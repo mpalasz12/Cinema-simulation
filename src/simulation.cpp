@@ -136,6 +136,10 @@ bool Simulation::closeCinemaIfNeeded() {
 		}
 		Weekday newDay{currentDay};
 		time.setDay(newDay);
+		if (time.getDay() == Weekday::Monday) {
+			prepareWeek();
+		}
+		prepareDay();
 		return true;
 	} else {
 		return false;
