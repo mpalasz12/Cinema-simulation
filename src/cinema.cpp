@@ -107,7 +107,7 @@ void Cinema::addJanitorCloset() {
 	Workplace closet(janitorClosets.size(), WorkplaceType::janitorialCloset);
 	janitorClosets.push_back(closet);
 }
-void Cinema::addCountersFromFile(std::string path)
+void Cinema::addWorkplacesFromFile(std::string path)
 {
 	std::ifstream file(path);
     if (file.is_open()) 
