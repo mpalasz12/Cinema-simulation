@@ -363,6 +363,17 @@ std::vector<std::string> Cinema::getNamesOfMovies(Time time)
     }
 	return result;
 }
+bool Cinema::areMoreFilms(Time time)
+{
+	if(getNamesOfMovies(time).size() == 0)
+	{
+		return false;
+	}
+	else
+	{
+		return true;
+	}
+}
 void Cinema::buyTickets(std::string roomName, std::string movieName, Weekday day, unsigned int hour, unsigned int numberOfTickets)
 {
     for (ScreeningRoom& room : screeningRooms) 
