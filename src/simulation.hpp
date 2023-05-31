@@ -13,6 +13,7 @@ class Simulation {
 		unsigned currentStep;
 		SimLog simLog;
 		Time time;
+		std::string roomsPath;
 		std::string moviePath;
 		std::string employeePath;
 		std::string workplacePath;
@@ -25,6 +26,9 @@ class Simulation {
 
 		std::string getMoviePath();
 		void setMoviePath(std::string path);
+
+		std::string getRoomsPath();
+		void setRoomsPath(std::string newPath);
 
 		std::string getEmployeePath();
 		void setEmployeePath(std::string path);
