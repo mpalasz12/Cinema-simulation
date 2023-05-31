@@ -7,21 +7,6 @@
 Simulation::Simulation(std::string cinemaName, unsigned short opening, unsigned short closing) : cinema(cinemaName, opening, closing), currentStep(0), time(Weekday::Monday, opening) {
 	
 }
-std::string Simulation::getCinemaPath()
-{
-	return cinemaPath;
-}
-void Simulation::setCinemaPath(std::string newPath)
-{
-	cinemaPath = newPath;
-}
-void Simulation::createCinemaFromFile()
-{
-	Cinema random = createCinema(cinemaPath);
-	cinema.setName(random.getName());
-	cinema.setOpeningHour(random.getOpeningHour());
-	cinema.setClosingHour(random.getClosingHour());
-}
 unsigned Simulation::getCurrentStep() {
 	return currentStep;
 }

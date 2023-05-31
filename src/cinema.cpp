@@ -252,6 +252,31 @@ void Cinema::addScreeningRoom(std::string newName, int newCapacity)
 	ScreeningRoom screeningRoom(newName, newCapacity);
 	screeningRooms.push_back(screeningRoom);
 }
+void Cinema::addRoomsFromFile(std::string path)
+{
+    std::ifstream file(path);
+    if (file.is_open()) 
+    {
+        std::string line;
+        std::string field;
+
+        while (std::getline(file, line))
+        {
+            std::istringstream iss(line);
+            std::getline(iss, field, ',');
+            std::string screeningRoomName = field;
+
+            std::getline(iss, field, ',');
+            unsigned short capacity = std::stoul(field);
+            addScreeningRoom(screeningRoomName, capacity);
+        }
+
+        file.close();
+    }
+    else {
+        std::cout << "Can't open a file." << std::endl;
+    }
+}
 void Cinema::setScheduleForWeek(std::string path)
 {
 	for (ScreeningRoom& room : screeningRooms) 
