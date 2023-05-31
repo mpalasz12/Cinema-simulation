@@ -115,9 +115,31 @@ std::string Simulation::runStep() {
 	addToLog(cinema.movieLogs(time));
 	log = getStepLog();
 	simLog.clearStepLog();
-	time.increaseHour();
+	if (!closeCinemaIfNeeded()) {
+		time.increaseHour();
+	}
 	return log;
 
 
 }
+
+bool Simulation::closeCinemaIfNeeded() {
+	if (time.getHour() == cinema.getClosingHour()) {
+		cinema.closeCinema();
+		addToLog("Cinema closed for the day.");
+		time.setHour(cinema.getOpeningHour());
+		int currentDay = static_cast<int>(time.getDay());
+		if (currentDay == 6) {
+			currentDay = 0;
+		} else {
+			currentDay++;
+		}
+		Weekday newDay{currentDay};
+		time.setDay(newDay);
+		return true;
+	} else {
+		return false;
+	}
+}
+
 

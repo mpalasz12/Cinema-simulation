@@ -50,4 +50,5 @@ class Simulation {
 
 		void stepCounters();
 		void stepMovieRooms();
+		bool closeCinemaIfNeeded();
 };
