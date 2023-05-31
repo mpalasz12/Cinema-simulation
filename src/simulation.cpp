@@ -102,11 +102,12 @@ std::string Simulation::runStep() {
 	log.append(" new customers arrived at the cinema this hour");
 	addToLog(log);
 
+	std::vector<std::string> movies = cinema.getNamesOfMovies(time);
+
 	for (unsigned i = 0; i <= newCustomers; i++) {
 		// create the employees and get them in a random queue
-		cinema.addRandomCustomer(moviePath);
+		cinema.addRandomCustomer(movies);
 
-		
 	}
 
 

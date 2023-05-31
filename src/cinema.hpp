@@ -59,7 +59,7 @@ class Cinema {
 		void addJanitorCloset();
 		void addWorkplacesFromFile(std::string path);
 
-		void addRandomCustomer(std::string moviePath);
+		void addRandomCustomer(std::vector<std::string> movies);
 		
 		bool isWorkplace(unsigned ID, WorkplaceType type);
 		bool hasEmployee(unsigned ID, WorkplaceType type);
