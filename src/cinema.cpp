@@ -444,10 +444,13 @@ bool Cinema::isWorking(WorkplaceType type, unsigned ID) {
 	return result -> isWorking();
 }
 
-void Cinema::addRandomCustomer(std::string moviePath) {
+void Cinema::addRandomCustomer(std::vector<std::string> movies) {
 	unsigned age = generateRandomNumber(5, 85);
 	unsigned ticketAmt = generateRandomNumber(1, 6);
-	std::string movieTitle = randomMovie(moviePath).getName();
+	std::random_device rd;
+    std::mt19937 gen(rd());
+    std::uniform_int_distribution<std::size_t> dis(0, movies.size() - 1);
+	std::string movieTitle = movies[dis(gen)];
 
 	customerNum++;
 
