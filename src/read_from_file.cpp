@@ -48,37 +48,6 @@ Cinema createCinema(std::string path)
     }
     return Cinema("", 0,0);
 }
-
-void addEmployeesFromFile(Cinema& cinema, std::string path)
-{
-    std::ifstream file(path);
-    if (file.is_open()) 
-    {
-        std::string line;
-        std::string field;
-        std::string name;
-        unsigned hours;
-        employeeType type;
-        while (std::getline(file, line))
-        {
-            std::istringstream iss(line);
-            std::getline(iss, field, ',');
-            name = field;
-
-            std::getline(iss, field, ',');
-            hours = std::stoul(field);
-
-            std::getline(iss, field, ',');
-            type = convertToEmployeeType(field);
-
-            cinema.addEmployee(name, type, hours);
-        }
-        file.close();
-    }
-    else {
-        std::cout << "Can't open a file." << std::endl;
-    }
-}
 employeeType convertToEmployeeType(const std::string& employeeTypeName) {
     static const std::unordered_map<std::string, employeeType> employeeTypeMap = {
         {"worker", employeeType::worker},
