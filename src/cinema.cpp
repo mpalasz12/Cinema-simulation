@@ -354,22 +354,18 @@ void Cinema::buyTickets(std::string roomName, std::string movieName, Weekday day
                     if (showing.getFreeChairs() >= numberOfTickets)
                     {
                         showing.setFreeChairs(showing.getFreeChairs() - numberOfTickets);
-                        std::cout << "Bought" << std::endl;
                         return;
                     }
                     else
                     {
-                        std::cout << "Not enough free chairs" << std::endl;
                         return;
                     }
                 }
             }
-            std::cout << "Movie not found" << std::endl;
 			return;
         }
     }
 
-    std::cout << "Room with such name not found " << std::endl;
 }
 
 
@@ -395,7 +391,13 @@ std::string Cinema::updateWorkingCounters(unsigned hour, Weekday day) {
 			if (checkWorking(names, hour, day)) {
 				if (!workplace.isWorking()) {
 					workplace.setWorking(true);
-					result.append("Ticket counter (");
+					if (workplace.getType() == WorkplaceType::ticketCounter) {
+						result.append("Ticket counter (");
+					} else if (workplace.getType() == WorkplaceType::foodCounter) {
+						result.append("Food counter (");
+					} else {
+						result.append("Workplace (");
+					}
 					result.append(std::to_string(workplace.getIdentifier()));
 					result.append(") started working \n");
 				}
@@ -454,9 +456,22 @@ std::string Cinema::sellTickets() {
 						result.append(std::to_string(customer -> getID()));
 						result.append("), bought ");
 						result.append(std::to_string(customer -> getHowManyTickets()));
+						if (customer -> getAge() < 18) {
+							result.append(" discounted");
+						}
 						result.append(" tickets for ");
 						result.append(customer -> getMovieName());
 						result.append("\n");
+					} else {
+						result.append("Customer (ID: ");
+						result.append(std::to_string(customer -> getID()));
+						result.append("), tried to buy ");
+						result.append(std::to_string(customer -> getHowManyTickets()));
+						result.append(" tickets for ");
+						result.append(customer -> getMovieName());
+						result.append(", but was unable to");
+						result.append("\n");
+
 					}
 				}
 				
@@ -515,4 +530,14 @@ std::string Cinema::movieLogs(Time time)
 
 void Cinema::addAvailabilityFor(std::string name, Weekday day) {
 	employees.addAvailabilityFor(name, day);
+}
+
+void Cinema::closeCinema() {
+	for (auto counter : ticketCounters) {
+		counter.closeCounter();
+	}
+	
+	for (auto counter : foodCounters) {
+		counter.closeCounter();
+	}
 }

@@ -10,10 +10,6 @@
 #include "customer.h"
 
 
-/*! TODO: add class fields related to other cinema classes
- *  \todo add class fields related to other cinema classes
- */
-
 class Cinema {
 	private:
 		// class fields
@@ -89,4 +85,6 @@ class Cinema {
 		std::string sellTickets();
 		std::string movieLogs(Time time);
 		
+		void closeCinema();
+		void openCinema();
 };

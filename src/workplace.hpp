@@ -42,4 +42,5 @@ class Workplace {
 		std::vector<std::string> getAssignedEmployees();
 
 		void sell();
+		void closeCounter();
 };

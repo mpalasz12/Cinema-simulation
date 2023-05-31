@@ -77,3 +77,8 @@ unsigned Workplace::getQueueSize() {
 unsigned Workplace::getFirstCustomer() {
 	return *(queue.begin());
 }
+
+void Workplace::closeCounter() {
+	queue.clear();
+	working = false;
+}
