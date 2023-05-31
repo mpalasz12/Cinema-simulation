@@ -75,5 +75,5 @@ unsigned Workplace::getQueueSize() {
 }
 
 Customer* Workplace::getFirstCustomer() {
-	return *queue.begin();
+	return *(queue.begin());
 }

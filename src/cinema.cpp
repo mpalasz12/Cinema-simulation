@@ -429,19 +429,21 @@ std::string Cinema::sellTickets() {
 
 			// get a random number of customers to serve each hour
 			unsigned customersToServe = generateRandomNumber(10, 25);
-			auto customer = counter.getFirstCustomer();
-			while (customersToServe != 0 || counter.getQueueSize() != 0) {
-				if (findShowings(customer -> getMovieName(), customer -> getHowManyTickets())) {
-					result.append("Customer (ID: ");
-					result.append(std::to_string(customer -> getID()));
-					result.append("), bought ");
-					result.append(std::to_string(customer -> getHowManyTickets()));
-					result.append(" tickets for ");
-					result.append(customer -> getMovieName());
-					result.append("\n");
-					
+			if (counter.getQueueSize() != 0) {
+				auto customer = counter.getFirstCustomer();
+				while (customersToServe != 0 || counter.getQueueSize() != 0) {
+					if (findShowings(customer -> getMovieName(), customer -> getHowManyTickets())) {
+						result.append("Customer (ID: ");
+						result.append(std::to_string(customer -> getID()));
+						result.append("), bought ");
+						result.append(std::to_string(customer -> getHowManyTickets()));
+						result.append(" tickets for ");
+						result.append(customer -> getMovieName());
+						result.append("\n");
+						
+					}
+					counter.removeFirstFromQueue();
 				}
-				counter.removeFirstFromQueue();
 			}
 		}
 	}

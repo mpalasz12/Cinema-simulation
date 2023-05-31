@@ -29,11 +29,12 @@ int main(int argc, char *argv[])
 
 
 	//Wywolanie symulacji z dodatkowymi zmiennymi, czyli sciezkami do odpowiednich plikow
-	Simulation sim("kino", 10, 20);
+	Simulation sim("kino", 15, 20);
 	sim.setRoomsPath("src/cinema.txt");
 	sim.setEmployeePath("src/workers.txt");
 	sim.setMoviePath("src/movies.txt");
 	sim.setWorkplacePath("src/counter.txt");
 	sim.startSimulation();
 	std::cout << sim.runStep() << std::endl;
+
 }

@@ -1,5 +1,5 @@
-nazwa1,8,worker,1,1,0,0,0,0,0
-nazwa2,6,ticketSeller,1,1,0,0,0,0,0
+nazwa1,16,worker,1,1,0,0,0,0,0
+nazwa2,16,ticketSeller,1,1,0,0,0,0,0
 nazwa3,10,ticketSeller,1,1,0,0,0,0,0
 nazwa4,10,ticketSeller,1,1,0,0,0,0,0
 nazwa5,10,foodSeller,1,1,0,0,0,0,0

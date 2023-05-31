@@ -97,11 +97,10 @@ std::string Simulation::runStep() {
 	log.append(" new customers arrived at the cinema this hour");
 	addToLog(log);
 
-	for (unsigned i; i <= newCustomers; i++) {
+	for (unsigned i = 0; i <= newCustomers; i++) {
 		// create the employees and get them in a random queue
 		cinema.addRandomCustomer(moviePath);
 
-		time.increaseHour();
 		
 	}
 
@@ -110,7 +109,9 @@ std::string Simulation::runStep() {
 	addToLog(cinema.sellTickets());
 	log = getStepLog();
 	simLog.clearStepLog();
+	time.increaseHour();
 	return log;
+
 
 }
 
