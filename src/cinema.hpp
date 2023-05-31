@@ -74,6 +74,7 @@ class Cinema {
 		void printSchedule();
 
 		bool findShowings(std::string movieName, unsigned int howManyTickets, Time time);
+		std::vector<std::string> getNamesOfMovies(Time time);
 		void buyTickets(std::string roomName, std::string movieName, Weekday day, unsigned int hour, unsigned int numberOfTickets);
 
 		void addAvailabilityForAll(Weekday day);
