@@ -29,6 +29,7 @@ class Simulation {
 
 		std::string getRoomsPath();
 		void setRoomsPath(std::string newPath);
+		void readRoomsFromFile();
 
 		std::string getEmployeePath();
 		void setEmployeePath(std::string path);

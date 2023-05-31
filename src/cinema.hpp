@@ -79,6 +79,7 @@ class Cinema {
 		void buyTickets(std::string roomName, std::string movieName, Weekday day, unsigned int hour, unsigned int numberOfTickets);
 
 		void addAvailabilityForAll(Weekday day);
+		void addAvailabilityFor(std::string name, Weekday day);
 		bool checkWorking(std::vector<std::string> names, unsigned hour, Weekday day);
 		std::string updateWorkingCounters(unsigned hour, Weekday day);
 

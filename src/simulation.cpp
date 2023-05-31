@@ -59,7 +59,9 @@ void Simulation::readWorkplacesFromFile() {
 }
 
 void Simulation::startSimulation() {
-	addRoomsFromFile(roomsPath);
+	cinema.addRoomsFromFile(roomsPath);
+	readWorkplacesFromFile();
+	readEmployeesFromFile();
 	prepareWeek();
 	prepareDay();
 	return;

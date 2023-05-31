@@ -484,3 +484,7 @@ std::string Cinema::movieLogs(Time time)
 	}
 	return result;
 }
+
+void Cinema::addAvailabilityFor(std::string name, Weekday day) {
+	employees.addAvailabilityFor(name, day);
+}
