@@ -24,6 +24,11 @@ void Time::setHour(unsigned int newHour)
 {
     hour = newHour;
 }
+
+void Time::increaseHour() {
+	hour++;
+}
+
 std::ostream& operator<<(std::ostream& os, const Time& time)
 {   
     os << time.hour << ":00";

@@ -1,6 +1,7 @@
 #include <iostream>
 #include "simulation.hpp"
 #include "enums.hpp"
+#include "random_movies.h"
 
 Simulation::Simulation(std::string cinemaName, unsigned short opening, unsigned short closing) : cinema(cinemaName, opening, closing), currentStep(0), time(Weekday::Monday, opening) {
 	
@@ -26,6 +27,8 @@ void Simulation::setMoviePath(std::string path) {
 }
 
 void Simulation::startSimulation() {
+	prepareWeek();
+	prepareDay();
 	return;
 }
 
@@ -49,15 +52,21 @@ void Simulation::prepareDay() {
 
 void Simulation::runStep() {
 	// tu cogodzinne zmiany
-	cinema.updateWorkingCounters(time.getHour(), time.getDay());
+
+	addToLog(cinema.updateWorkingCounters(time.getHour(), time.getDay()));
 
 	// get random amount of customers in range (10, 60)
-	unsigned newCustomers = std::rand() % 50 + 10;
+	unsigned newCustomers = generateRandomNumber(10, 60);
+	std::string log;
+	log.append(std::to_string(newCustomers));
+	log.append(" new customers arrived at the cinema this hour");
+	addToLog(log);
 
 	for (unsigned i; i <= newCustomers; i++) {
 		// create the employees and get them in a random queue
 		cinema.addRandomCustomer(moviePath);
 
+		time.increaseHour();
 	}
 
 	// sell tickets and add the information to the log

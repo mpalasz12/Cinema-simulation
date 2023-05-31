@@ -26,6 +26,7 @@ int main(int argc, char *argv[])
 	stream << argv[3];
 	stream >> employeeData;
 
+
 	//Wywolanie symulacji z dodatkowymi zmiennymi, czyli sciezkami do odpowiednich plikow
 
 

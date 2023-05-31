@@ -260,18 +260,30 @@ bool Cinema::checkWorking(std::vector<std::string> names, unsigned hour, Weekday
 	return false;
 }
 
-void Cinema::updateWorkingCounters(unsigned hour, Weekday day) {
+std::string Cinema::updateWorkingCounters(unsigned hour, Weekday day) {
+	std::string result = "";
 	for (auto type : workplaceTypes) {
 		auto& workplaceVec = *getWorkplaceVec(type);
 		for (auto& workplace : workplaceVec) {
 			auto names = workplace.getAssignedEmployees();
 			if (checkWorking(names, hour, day)) {
-				workplace.setWorking(true);
+				if (!workplace.isWorking()) {
+					workplace.setWorking(true);
+					result.append("Ticket counter (");
+					result.append(std::to_string(workplace.getIdentifier()));
+					result.append(") started working \n");
+				}
 			} else {
-				workplace.setWorking(false);
+				if (workplace.isWorking()) {
+					workplace.setWorking(false);
+					result.append("Ticket counter (");
+					result.append(std::to_string(workplace.getIdentifier()));
+					result.append(") stopped working \n");
+				}
 			}
 		}
 	}
+	return result;
 }
 
 bool Cinema::isWorking(WorkplaceType type, unsigned ID) {
@@ -280,8 +292,8 @@ bool Cinema::isWorking(WorkplaceType type, unsigned ID) {
 }
 
 void Cinema::addRandomCustomer(std::string moviePath) {
-	unsigned age = std::rand() % 80 + 5;
-	unsigned ticketAmt = std::rand() % 5 + 1;
+	unsigned age = generateRandomNumber(5, 85);
+	unsigned ticketAmt = generateRandomNumber(1, 6);
 	std::string movieTitle = randomMovie(moviePath).getName();
 
 	customerNum++;
@@ -289,7 +301,7 @@ void Cinema::addRandomCustomer(std::string moviePath) {
 	Customer customer(customerNum, age, movieTitle, ticketAmt);
 	customers.push_back(customer);
 
-	unsigned counterNum = std::rand() % ticketCounters.size();
+	unsigned counterNum = generateRandomNumber(0, ticketCounters.size() - 1);
 	Workplace& counter = ticketCounters.at(counterNum);
 	counter.addToQueue(&customers.back());
 	
@@ -304,7 +316,7 @@ std::string Cinema::sellTickets() {
 		if (counter.isWorking()) {
 
 			// get a random number of customers to serve each hour
-			unsigned customersToServe = std::rand() % 15 + 10;
+			unsigned customersToServe = generateRandomNumber(10, 25);
 			auto customer = counter.getFirstCustomer();
 			while (customersToServe != 0 || counter.getQueueSize() != 0) {
 				if (findShowings(customer -> getMovieName(), customer -> getHowManyTickets())) {

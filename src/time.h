@@ -15,6 +15,8 @@ public:
 
 	void setDay(Weekday newDay);
 	void setHour(unsigned int newHour);
+	
+	void increaseHour();
 
     friend std::ostream& operator<<(std::ostream& os, const Time& time);
 };
