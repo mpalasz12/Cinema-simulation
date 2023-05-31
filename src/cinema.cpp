@@ -328,7 +328,7 @@ bool Cinema::findShowings(std::string movieName, unsigned howManyTickets, Time t
             {
 				if(time.getDay() >= showing.getDay())
 				{
-					if(time.getHour() >= showing.getHour())
+					if(time.getHour() <= showing.getHour())
 					{
 						if (showing.getFreeChairs() >= howManyTickets)
 						{
@@ -472,7 +472,7 @@ std::string Cinema::sellTickets(Time time) {
 		if (counter.isWorking()) {
 
 		// get a random number of customers to serve each hour
-			unsigned customersToServe = generateRandomNumber(10, 25);
+			unsigned customersToServe = generateRandomNumber(10, 15);
 			unsigned servedID;
 			while (customersToServe != 0 && counter.getQueueSize() != 0) {
 				customersToServe--;

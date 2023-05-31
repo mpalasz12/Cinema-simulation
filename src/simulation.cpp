@@ -96,7 +96,7 @@ std::string Simulation::runStep() {
 	addToLog(cinema.updateWorkingCounters(time.getHour(), time.getDay()));
 
 	// get random amount of customers in range (10, 60)
-	unsigned newCustomers = generateRandomNumber(10, 60);
+	unsigned newCustomers = generateRandomNumber(10, 30);
 	std::string log;
 	log.append(std::to_string(newCustomers));
 	log.append(" new customers arrived at the cinema this hour");

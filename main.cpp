@@ -38,7 +38,7 @@ int main(int argc, char *argv[])
 	std::string answer;
 	while (true) {
 		std::cout << sim.runStep() << std::endl;
-		std::cin >> answer;
+		//std::cin >> answer;
 
 	}
 
