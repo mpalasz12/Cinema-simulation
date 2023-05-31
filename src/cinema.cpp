@@ -391,9 +391,9 @@ std::string Cinema::updateWorkingCounters(unsigned hour, Weekday day) {
 			if (checkWorking(names, hour, day)) {
 				if (!workplace.isWorking()) {
 					workplace.setWorking(true);
-					if (workplace.getType() == WorkplaceType::ticketCounter) {
+					if (type == WorkplaceType::ticketCounter) {
 						result.append("Ticket counter (");
-					} else if (workplace.getType() == WorkplaceType::foodCounter) {
+					} else if (type == WorkplaceType::foodCounter) {
 						result.append("Food counter (");
 					} else {
 						result.append("Workplace (");
