@@ -91,7 +91,7 @@ void Simulation::prepareDay() {
 	cinema.prepareWorkplacesDay(time.getDay());
 }
 
-void Simulation::runStep() {
+std::string Simulation::runStep() {
 	// tu cogodzinne zmiany
 
 	addToLog(cinema.updateWorkingCounters(time.getHour(), time.getDay()));
@@ -108,10 +108,15 @@ void Simulation::runStep() {
 		cinema.addRandomCustomer(moviePath);
 
 		time.increaseHour();
+		
 	}
+
 
 	// sell tickets and add the information to the log
 	addToLog(cinema.sellTickets());
+	log = getStepLog();
+	simLog.clearStepLog();
+	return log;
 
 }
 

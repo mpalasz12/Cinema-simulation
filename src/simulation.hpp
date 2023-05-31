@@ -40,7 +40,7 @@ class Simulation {
 		void readWorkplacesFromFile();
 
 		void startSimulation();
-		void runStep();
+		std::string runStep();
 
 		void prepareWeek();
 		void prepareDay();

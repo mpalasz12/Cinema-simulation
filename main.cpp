@@ -1,6 +1,7 @@
 #include <iostream>
 #include <sstream>
 #include <string>
+#include "src/simulation.hpp"
 
 int main(int argc, char *argv[]) 
 {
@@ -28,6 +29,9 @@ int main(int argc, char *argv[])
 
 
 	//Wywolanie symulacji z dodatkowymi zmiennymi, czyli sciezkami do odpowiednich plikow
-
-
+	Simulation sim("kino", 10, 20);
+	sim.setCinemaPath("cinema.txt");
+	sim.setEmployeePath("workers.txt");
+	sim.setMoviePath("movies.txt");
+	sim.setWorkplacePath("counter.txt");
 }

@@ -1,2 +1,7 @@
 nazwa1,8,worker
 nazwa2,6,ticketSeller
+nazwa3,10,ticketSeller
+nazwa4,10,ticketSeller
+nazwa5,10,foodSeller
+nazwa6,10,foodSeller
+nazwa7,10,janitor
