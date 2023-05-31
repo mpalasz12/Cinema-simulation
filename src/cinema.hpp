@@ -60,6 +60,7 @@ class Cinema {
 		void addTicketCounter();
 		void addFoodCounter();
 		void addJanitorCloset();
+		void addCountersFromFile(std::string path);
 
 		void addRandomCustomer(std::string moviePath);
 		

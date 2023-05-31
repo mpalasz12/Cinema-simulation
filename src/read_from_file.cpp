@@ -63,3 +63,18 @@ employeeType convertToEmployeeType(const std::string& employeeTypeName) {
 
     return employeeType::worker;
 }
+WorkplaceType convertToWorkplaceType(const std::string& workplaceTypeName) {
+    static const std::unordered_map<std::string, WorkplaceType> workplaceTypeMap = {
+        {"ticketCounter", WorkplaceType::ticketCounter},
+        {"janitorialCloset", WorkplaceType::janitorialCloset},
+        {"foodCounter", WorkplaceType::foodCounter},
+        {"other", WorkplaceType::other}
+    };
+
+    auto it = workplaceTypeMap.find(workplaceTypeName);
+    if (it != workplaceTypeMap.end()) {
+        return it->second;
+    }
+
+    return WorkplaceType::ticketCounter;
+}

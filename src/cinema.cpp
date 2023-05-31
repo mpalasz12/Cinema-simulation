@@ -107,7 +107,53 @@ void Cinema::addJanitorCloset() {
 	Workplace closet(janitorClosets.size(), WorkplaceType::janitorialCloset);
 	janitorClosets.push_back(closet);
 }
+void Cinema::addCountersFromFile(std::string path)
+{
+	std::ifstream file(path);
+    if (file.is_open()) 
+    {
+        std::string line;
+        std::string field;
+        unsigned howMany;
+        WorkplaceType workplaceType;
+        while (std::getline(file, line))
+        {
+            std::istringstream iss(line);
+            std::getline(iss, field, ',');
+			workplaceType = convertToWorkplaceType(field);
+			std::getline(iss, field, ',');
+			howMany = std::stoul(field);
 
+			switch (workplaceType)
+			{
+			case WorkplaceType::ticketCounter:
+				for(unsigned i=0; i<howMany; i++)
+				{
+					addTicketCounter();
+				}
+				break;
+			case WorkplaceType::foodCounter:
+				for(unsigned i=0; i<howMany; i++)
+				{
+					addFoodCounter();
+				}
+				break;
+				case WorkplaceType::janitorialCloset:
+				for(unsigned i=0; i<howMany; i++)
+				{
+					addJanitorCloset();
+				}
+				break;
+				case WorkplaceType::other:
+				break;
+			}
+        }
+        file.close();
+    }
+    else {
+        std::cout << "Can't open a file." << std::endl;
+    }
+}
 std::vector<Workplace>::iterator Cinema::findWorkplace(unsigned ID, WorkplaceType type) {
 
 	auto workplaceVec = *getWorkplaceVec(type);
