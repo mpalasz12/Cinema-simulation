@@ -1,0 +1,4 @@
+ticketCounter,3
+janitorialCloset,2
+foodCounter,4
+other,5

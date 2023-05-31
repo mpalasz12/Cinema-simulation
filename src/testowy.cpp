@@ -17,4 +17,6 @@ int main()
     time.setHour(16);
     logs = cinema.movieLogs(time);
     std::cout << logs;
+    cinema.addWorkplacesFromFile("counter.txt");
+    std::cout << logs;
 }
