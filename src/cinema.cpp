@@ -521,6 +521,11 @@ std::string Cinema::movieLogs(Time time)
 					break;
 				}
 				result.append(room.getName());
+				result.append(" with ");
+				result.append(std::to_string(room.getCapacity() - showing.getFreeChairs()));
+				result.append("/");
+				result.append(std::to_string(room.getCapacity()));
+				result.append(" people ");
 				result.append("\n");
 			}
 		}

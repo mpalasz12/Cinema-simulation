@@ -89,7 +89,6 @@ std::string Simulation::runStep() {
 	// tu cogodzinne zmiany
 
 	addToLog(cinema.updateWorkingCounters(time.getHour(), time.getDay()));
-	addToLog(cinema.movieLogs(time));
 
 	// get random amount of customers in range (10, 60)
 	unsigned newCustomers = generateRandomNumber(10, 60);
@@ -108,6 +107,7 @@ std::string Simulation::runStep() {
 
 	// sell tickets and add the information to the log
 	addToLog(cinema.sellTickets());
+	addToLog(cinema.movieLogs(time));
 	log = getStepLog();
 	simLog.clearStepLog();
 	time.increaseHour();
