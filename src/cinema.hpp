@@ -71,6 +71,7 @@ class Cinema {
 		void prepareWorkplacesDay(Weekday day);
 		void prepareEmployeeSchedules();
 		void addScreeningRoom(std::string newName, int newCapacity);
+		void addRoomsFromFile(std::string path);
 		void setScheduleForWeek(std::string path);
 		void printSchedule();
 

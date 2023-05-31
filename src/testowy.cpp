@@ -8,7 +8,8 @@
 int main()
 {
     std::string logs;
-    Cinema cinema = createCinema("cinema.txt");
+    Cinema cinema("multikino", 8, 20);
+    cinema.addRoomsFromFile("cinema.txt");
     cinema.setScheduleForWeek("movies.txt");
     cinema.printSchedule();
     Time time(Weekday::Sunday, 8);
