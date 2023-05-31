@@ -86,6 +86,15 @@ void Cinema::addEmployeesFromFile(std::string path)
             type = convertToEmployeeType(field);
 
 			addEmployee(name, type, hours);
+
+			for(int i=0; i<7; i++)
+			{
+				std::getline(iss, field, ',');
+				if(field == "1")
+				{
+					addAvailabilityFor(name, convertToWeekdayType(i));
+				}
+			}
         }
         file.close();
     }
