@@ -81,5 +81,6 @@ class Cinema {
 
 		bool isWorking(WorkplaceType type, unsigned ID);
 		std::string sellTickets();
+		std::string movieLogs(Time time);
 		
 };

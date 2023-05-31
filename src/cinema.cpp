@@ -323,3 +323,49 @@ std::string Cinema::sellTickets() {
 	}
 	return result;
 }
+std::string Cinema::movieLogs(Time time)
+{
+	std::string result;
+	for (ScreeningRoom& room : screeningRooms)
+	{
+		std::vector<Showing> daySchedule = room.getSchedule(static_cast<int>(time.getDay()));
+		for(Showing& showing : daySchedule)
+		{
+			if(showing.getHour() == time.getHour())
+			{
+				result.append("Movie named ");
+				result.append(showing.getName());
+				result.append(" started at ");
+				result.append(std::to_string(time.getHour()));
+				result.append(":00 ");
+				switch (time.getDay()) 
+				{
+				case Weekday::Monday:
+					result.append("on monday in room ");
+					break;
+				case Weekday::Tuesday:
+					result.append("on tuesday in room ");
+					break;
+				case Weekday::Wednesday:
+					result.append("on wednesday in room ");
+					break;
+				case Weekday::Thursday:
+					result.append("on thursday in room ");
+					break;
+				case Weekday::Friday:
+					result.append("on friday in room ");
+					break;
+				case Weekday::Saturday:
+					result.append("on saturday in room ");
+					break;
+				case Weekday::Sunday:
+					result.append("on sunday in room ");
+					break;
+				}
+				result.append(room.getName());
+				result.append("\n");
+			}
+		}
+	}
+	return result;
+}
