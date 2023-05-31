@@ -14,6 +14,8 @@ class Simulation {
 		SimLog simLog;
 		Time time;
 		std::string moviePath;
+		std::string employeePath;
+		std::string workplacePath;
 	public:
 		Simulation(std::string cinemaName, unsigned short opening, unsigned short closing);
 
@@ -23,6 +25,14 @@ class Simulation {
 
 		std::string getMoviePath();
 		void setMoviePath(std::string path);
+
+		std::string getEmployeePath();
+		void setEmployeePath(std::string path);
+		void readEmployeesFromFile();
+
+		std::string getWorkplacePath();
+		void setWorkplacePath(std::string path);
+		void readWorkplacesFromFile();
 
 		void startSimulation();
 		void runStep();

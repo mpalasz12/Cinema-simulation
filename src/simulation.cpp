@@ -26,6 +26,30 @@ void Simulation::setMoviePath(std::string path) {
 	moviePath = path;
 }
 
+std::string Simulation::getEmployeePath() {
+	return employeePath;
+}
+
+void Simulation::setEmployeePath(std::string path) {
+	employeePath = path;
+}
+
+void Simulation::readEmployeesFromFile() {
+	cinema.addEmployeesFromFile(employeePath);
+}
+
+std::string Simulation::getWorkplacePath() {
+	return workplacePath;
+}
+
+void Simulation::setWorkplacePath(std::string path) {
+	workplacePath = path;
+}
+
+void Simulation::readWorkplacesFromFile() {
+	cinema.addWorkplacesFromFile(workplacePath);
+}
+
 void Simulation::startSimulation() {
 	prepareWeek();
 	prepareDay();
