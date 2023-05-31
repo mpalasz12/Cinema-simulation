@@ -73,7 +73,7 @@ class Cinema {
 		void setScheduleForWeek(std::string path);
 		void printSchedule();
 
-		bool findShowings(std::string movieName, unsigned int howManyTickets);
+		bool findShowings(std::string movieName, unsigned int howManyTickets, Time time);
 		void buyTickets(std::string roomName, std::string movieName, Weekday day, unsigned int hour, unsigned int numberOfTickets);
 
 		void addAvailabilityForAll(Weekday day);
@@ -82,7 +82,7 @@ class Cinema {
 		std::string updateWorkingCounters(unsigned hour, Weekday day);
 
 		bool isWorking(WorkplaceType type, unsigned ID);
-		std::string sellTickets();
+		std::string sellTickets(Time time);
 		std::string movieLogs(Time time);
 		
 		void closeCinema();
