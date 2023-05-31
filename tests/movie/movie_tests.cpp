@@ -2,6 +2,7 @@
 #include <iostream>
 #include <sstream>
 #include "../../src/movie.h"
+#include "../../src/random_movies.h"
 
 TEST_CASE("movie simple tests", "[movie]")
 {
@@ -27,5 +28,13 @@ TEST_CASE("movie simple tests", "[movie]")
 		std::ostringstream oss;
 		oss << movie;
 		CHECK(oss.str() == "Movies name: Interstellar\nMovies price: 22\nMovies length: 156 minutes\n");
+	}
+
+	SECTION("random movie")
+	{
+		Movie random = randomMovie("example.txt");
+		CHECK(random.getName() == "Interstellar");
+		CHECK(random.getPrice() == 22);
+		CHECK(random.getDuration() == 156);
 	}
 }

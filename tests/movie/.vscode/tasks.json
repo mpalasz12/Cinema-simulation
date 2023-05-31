@@ -16,10 +16,18 @@
                 // "${workspaceFolder}\\${workspaceFolderBasename}.exe",
                 //Wersja dla Linuxa:
                 "${workspaceFolder}/movie_tests.cpp",
+                "${workspaceFolder}/room_tests.cpp",
+                "${workspaceFolder}/showing_tests.cpp",
                 "${workspaceFolder}/catch_amalgamated.cpp",
                 "${workspaceFolder}/catch_config.cpp",
+                "${workspaceFolder}/customer_tests.cpp",
                 //trzeba również dołączyć pliki znajdujące się "poziom wyżej", ale bez funkcji main (dlatego nie ma tu ../*.cpp, tylko wskazany jest konkretny plik)
                 "${workspaceFolder}/../../src/movie.cpp",
+                "${workspaceFolder}/../../src/random_movies.cpp",
+                "${workspaceFolder}/../../src/screening_room.cpp",
+                "${workspaceFolder}/../../src/showing.cpp",
+                "${workspaceFolder}/../../src/time.cpp",
+                "${workspaceFolder}/../../src/customer.cpp",
                 "-o",
                 "${workspaceFolder}/${workspaceFolderBasename}",
                 "-Wall",
