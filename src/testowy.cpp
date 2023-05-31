@@ -1,14 +1,20 @@
 #include "read_from_file.h"
+#include "cinema.hpp"
+#include "time.h"
 #include <iostream>
+#include <string>
+
 
 int main()
 {
+    std::string logs;
     Cinema cinema = createCinema("cinema.txt");
     cinema.setScheduleForWeek("movies.txt");
     cinema.printSchedule();
-    cinema.findShowings("Forrest Gump", 4);
-    std::cout << "---------------------" << std::endl;
-    cinema.printSchedule();
-    addEmployeesFromFile(cinema, "workers.txt");
-    
+    Time time(Weekday::Sunday, 8);
+    logs = cinema.movieLogs(time);
+    std::cout << logs;
+    time.setHour(16);
+    logs = cinema.movieLogs(time);
+    std::cout << logs;
 }
