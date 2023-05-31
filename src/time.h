@@ -17,6 +17,7 @@ public:
 	void setHour(unsigned int newHour);
 	
 	void increaseHour();
+	std::string timeToString();
 
     friend std::ostream& operator<<(std::ostream& os, const Time& time);
 };

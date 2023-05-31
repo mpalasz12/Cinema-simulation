@@ -87,6 +87,11 @@ void Simulation::prepareDay() {
 
 std::string Simulation::runStep() {
 	// tu cogodzinne zmiany
+	
+	std::string msg = "---------- ";
+	msg.append(time.timeToString());
+	msg.append(" ----------");
+	addToLog(msg);
 
 	addToLog(cinema.updateWorkingCounters(time.getHour(), time.getDay()));
 
