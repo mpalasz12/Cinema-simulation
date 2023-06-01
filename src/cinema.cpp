@@ -246,6 +246,9 @@ void Cinema::prepareWorkplacesDay(Weekday day) {
 				workplaceType = &janitorClosets;
 				break;
 		}
+			for (auto& workplace : *workplaceType) {
+				workplace.clearAssigned();
+			}
 
 			availability = employees.getWorkerByTypeAndAvailability(type, day);
 			avalIterator = availability.begin();
@@ -326,7 +329,7 @@ bool Cinema::findShowings(std::string movieName, unsigned howManyTickets, Time t
         {
             if (showing.getName() == movieName)
             {
-				if(time.getDay() >= showing.getDay())
+				if(time.getDay() == showing.getDay())
 				{
 					if(time.getHour() <= showing.getHour())
 					{

@@ -1,0 +1,627 @@
+---------- 10:00 Monday ----------
+Workplace (0) started working 
+
+10 new customers arrived at the cinema this hour
+
+Movie named Fight Club started at 10:00 on monday in room Sala1 with 0/60 people 
+Movie named The Shawshank Redemption started at 10:00 on monday in room Sala2 with 0/50 people 
+Movie named The Wolf of Wall Street started at 10:00 on monday in room Sala3 with 0/60 people 
+Movie named The Avengers started at 10:00 on monday in room Sala5 with 0/50 people 
+Movie named Inception started at 10:00 on monday in room Sala6 with 0/70 people 
+Movie named Saving Private Ryan started at 10:00 on monday in room Sala7 with 0/70 people 
+
+
+---------- 11:00 Monday ----------
+
+21 new customers arrived at the cinema this hour
+
+
+
+---------- 12:00 Monday ----------
+Ticket counter (0) started working 
+Ticket counter (1) started working 
+Ticket counter (2) started working 
+
+23 new customers arrived at the cinema this hour
+Customer (ID: 2), bought 3 discounted tickets for Fight Club
+Customer (ID: 3), bought 4 discounted tickets for Fight Club
+Customer (ID: 5), bought 4 tickets for The Dark Knight
+Customer (ID: 6), bought 4 discounted tickets for The Dark Knight
+Customer (ID: 10), bought 3 tickets for The Departed
+Customer (ID: 16), bought 6 tickets for The Dark Knight
+Customer (ID: 26), bought 6 tickets for The Departed
+Customer (ID: 28), bought 4 discounted tickets for The Dark Knight
+Customer (ID: 29), bought 3 tickets for The Dark Knight
+Customer (ID: 33), bought 6 tickets for The Lion King
+Customer (ID: 40), bought 4 tickets for The Departed
+Customer (ID: 43), bought 3 tickets for The Matrix
+Customer (ID: 44), bought 4 tickets for The Shawshank Redemption
+Customer (ID: 46), bought 1 tickets for The Lion King
+Customer (ID: 1), bought 2 tickets for Fight Club
+Customer (ID: 11), bought 5 tickets for Saving Private Ryan
+Customer (ID: 13), bought 2 tickets for Saving Private Ryan
+Customer (ID: 14), bought 6 tickets for The Lion King
+Customer (ID: 17), bought 3 tickets for The Lion King
+Customer (ID: 18), bought 5 tickets for The Dark Knight
+Customer (ID: 20), bought 4 tickets for The Dark Knight
+Customer (ID: 21), bought 5 tickets for Fight Club
+Customer (ID: 23), bought 4 tickets for The Departed
+Customer (ID: 27), bought 1 tickets for Saving Private Ryan
+Customer (ID: 30), bought 3 tickets for The Shawshank Redemption
+Customer (ID: 4), bought 3 tickets for The Dark Knight
+Customer (ID: 7), bought 2 tickets for Schindler's List
+Customer (ID: 8), bought 1 tickets for The Green Mile
+Customer (ID: 9), bought 6 discounted tickets for The Dark Knight
+Customer (ID: 12), bought 3 tickets for Pulp Fiction
+Customer (ID: 15), bought 4 tickets for The Lion King
+Customer (ID: 19), bought 3 tickets for Fight Club
+Customer (ID: 22), bought 6 tickets for The Lion King
+Customer (ID: 24), bought 5 tickets for The Green Mile
+Customer (ID: 25), bought 2 tickets for The Departed
+
+
+
+---------- 13:00 Monday ----------
+
+21 new customers arrived at the cinema this hour
+Customer (ID: 48), bought 3 tickets for The Lion King
+Customer (ID: 50), bought 3 tickets for Schindler's List
+Customer (ID: 51), bought 4 tickets for The Shawshank Redemption
+Customer (ID: 53), bought 1 tickets for The Lion King
+Customer (ID: 58), bought 2 tickets for The Green Mile
+Customer (ID: 60), bought 3 tickets for The Lion King
+Customer (ID: 62), bought 6 tickets for The Wolf of Wall Street
+Customer (ID: 63), bought 2 tickets for The Departed
+Customer (ID: 65), bought 3 tickets for The Lion King
+Customer (ID: 70), bought 5 tickets for The Lion King
+Customer (ID: 73), bought 3 discounted tickets for The Dark Knight
+Customer (ID: 74), bought 3 tickets for Schindler's List
+Customer (ID: 34), bought 4 tickets for The Departed
+Customer (ID: 36), bought 6 tickets for The Lion King
+Customer (ID: 37), bought 5 discounted tickets for The Wolf of Wall Street
+Customer (ID: 38), bought 1 tickets for The Shawshank Redemption
+Customer (ID: 39), bought 1 tickets for The Green Mile
+Customer (ID: 49), bought 6 tickets for The Wolf of Wall Street
+Customer (ID: 55), bought 3 tickets for The Departed
+Customer (ID: 56), bought 4 tickets for The Green Mile
+Customer (ID: 57), bought 3 tickets for The Dark Knight
+Customer (ID: 64), bought 3 discounted tickets for Pulp Fiction
+Customer (ID: 69), bought 1 tickets for The Lion King
+Customer (ID: 75), bought 4 discounted tickets for The Departed
+Customer (ID: 77), bought 4 tickets for The Green Mile
+Customer (ID: 31), bought 5 tickets for Pulp Fiction
+Customer (ID: 32), bought 6 tickets for The Departed
+Customer (ID: 35), bought 2 discounted tickets for The Dark Knight
+Customer (ID: 41), bought 5 discounted tickets for The Matrix
+Customer (ID: 42), bought 2 tickets for Fight Club
+Customer (ID: 45), bought 1 discounted tickets for The Dark Knight
+Customer (ID: 47), bought 3 tickets for The Dark Knight
+Customer (ID: 52), bought 6 tickets for The Dark Knight
+Customer (ID: 54), bought 6 tickets for The Departed
+Customer (ID: 59), bought 2 discounted tickets for The Departed
+Customer (ID: 61), bought 1 tickets for The Departed
+
+Movie named The Lion King started at 13:00 on monday in room Sala1 with 48/60 people 
+Movie named Pulp Fiction started at 13:00 on monday in room Sala2 with 11/50 people 
+Movie named Saving Private Ryan started at 13:00 on monday in room Sala5 with 8/50 people 
+Movie named The Wolf of Wall Street started at 13:00 on monday in room Sala6 with 17/70 people 
+Movie named The Shawshank Redemption started at 13:00 on monday in room Sala7 with 12/70 people 
+
+
+---------- 14:00 Monday ----------
+Ticket counter (0) stopped working 
+Food counter (0) started working 
+Food counter (1) started working 
+
+16 new customers arrived at the cinema this hour
+Customer (ID: 81), bought 1 tickets for The Dark Knight
+Customer (ID: 82), bought 5 tickets for The Green Mile
+Customer (ID: 83), bought 4 tickets for Schindler's List
+Customer (ID: 84), bought 2 discounted tickets for The Dark Knight
+Customer (ID: 86), bought 3 tickets for The Departed
+Customer (ID: 87), bought 2 tickets for The Dark Knight
+Customer (ID: 78), bought 2 tickets for The Green Mile
+Customer (ID: 79), bought 3 tickets for Fight Club
+Customer (ID: 92), bought 3 discounted tickets for The Dark Knight
+Customer (ID: 94), bought 5 tickets for The Dark Knight
+Customer (ID: 95), bought 3 discounted tickets for The Green Mile
+Customer (ID: 96), bought 5 tickets for The Dark Knight
+Customer (ID: 66), bought 1 tickets for The Green Mile
+Customer (ID: 67), bought 5 tickets for The Departed
+Customer (ID: 68), tried to buy 2 tickets for The Wolf of Wall Street, but was unable to
+Customer (ID: 71), bought 5 tickets for The Matrix
+Customer (ID: 72), bought 3 discounted tickets for Fight Club
+Customer (ID: 76), bought 6 tickets for The Shawshank Redemption
+Customer (ID: 80), bought 1 tickets for The Lion King
+Customer (ID: 85), bought 2 tickets for The Green Mile
+Customer (ID: 88), bought 5 tickets for Schindler's List
+Customer (ID: 89), bought 4 tickets for Fight Club
+
+Movie named The Dark Knight started at 14:00 on monday in room Sala3 with 60/60 people 
+
+
+---------- 15:00 Monday ----------
+
+16 new customers arrived at the cinema this hour
+Customer (ID: 97), bought 5 tickets for Fight Club
+Customer (ID: 104), bought 4 tickets for The Departed
+Customer (ID: 108), bought 4 tickets for The Shawshank Redemption
+Customer (ID: 98), bought 5 tickets for The Departed
+Customer (ID: 101), bought 1 tickets for The Departed
+Customer (ID: 102), bought 3 tickets for The Lion King
+Customer (ID: 106), bought 5 tickets for Fight Club
+Customer (ID: 109), bought 1 tickets for The Green Mile
+Customer (ID: 111), bought 1 tickets for Fight Club
+Customer (ID: 112), bought 1 tickets for The Green Mile
+Customer (ID: 113), bought 4 tickets for Fight Club
+Customer (ID: 90), bought 3 discounted tickets for Fight Club
+Customer (ID: 91), bought 1 tickets for The Green Mile
+Customer (ID: 93), bought 5 tickets for The Lion King
+Customer (ID: 99), bought 3 tickets for The Departed
+Customer (ID: 100), bought 3 tickets for Fight Club
+Customer (ID: 103), bought 1 discounted tickets for The Lion King
+Customer (ID: 105), bought 1 tickets for The Dark Knight
+Customer (ID: 107), bought 5 tickets for The Shawshank Redemption
+Customer (ID: 110), bought 6 tickets for Fight Club
+
+Movie named The Lion King started at 15:00 on monday in room Sala1 with 10/60 people 
+
+
+---------- 16:00 Monday ----------
+
+25 new customers arrived at the cinema this hour
+Customer (ID: 114), bought 3 tickets for The Departed
+Customer (ID: 118), bought 2 tickets for Fight Club
+Customer (ID: 122), bought 2 discounted tickets for The Green Mile
+Customer (ID: 130), bought 4 tickets for The Lion King
+Customer (ID: 132), bought 6 tickets for The Departed
+Customer (ID: 133), bought 1 tickets for The Shawshank Redemption
+Customer (ID: 135), bought 2 discounted tickets for The Matrix
+Customer (ID: 138), bought 4 tickets for The Departed
+Customer (ID: 115), bought 1 tickets for The Lion King
+Customer (ID: 116), bought 4 discounted tickets for The Dark Knight
+Customer (ID: 121), bought 5 tickets for Fight Club
+Customer (ID: 124), bought 3 tickets for The Departed
+Customer (ID: 125), bought 3 tickets for The Departed
+Customer (ID: 129), bought 4 tickets for The Departed
+Customer (ID: 131), bought 1 tickets for The Green Mile
+Customer (ID: 134), bought 2 tickets for The Departed
+Customer (ID: 137), bought 5 tickets for The Green Mile
+Customer (ID: 139), bought 3 tickets for The Green Mile
+Customer (ID: 117), bought 1 tickets for The Green Mile
+Customer (ID: 119), bought 1 tickets for The Departed
+Customer (ID: 120), bought 5 tickets for The Dark Knight
+Customer (ID: 123), bought 4 tickets for The Departed
+Customer (ID: 126), bought 1 tickets for The Matrix
+Customer (ID: 127), bought 6 tickets for The Departed
+Customer (ID: 128), bought 4 tickets for Schindler's List
+Customer (ID: 136), bought 4 discounted tickets for The Matrix
+
+Movie named The Green Mile started at 16:00 on monday in room Sala2 with 45/50 people 
+Movie named Fight Club started at 16:00 on monday in room Sala5 with 50/50 people 
+Movie named The Departed started at 16:00 on monday in room Sala7 with 0/70 people 
+
+
+---------- 17:00 Monday ----------
+
+30 new customers arrived at the cinema this hour
+Customer (ID: 142), bought 3 tickets for The Shawshank Redemption
+Customer (ID: 144), bought 6 discounted tickets for The Shawshank Redemption
+Customer (ID: 146), bought 6 tickets for The Departed
+Customer (ID: 154), bought 5 tickets for The Lion King
+Customer (ID: 156), bought 3 tickets for Fight Club
+Customer (ID: 157), bought 4 tickets for The Shawshank Redemption
+Customer (ID: 158), bought 2 tickets for Fight Club
+Customer (ID: 160), bought 1 tickets for The Shawshank Redemption
+Customer (ID: 165), bought 6 tickets for The Dark Knight
+Customer (ID: 166), bought 2 discounted tickets for The Green Mile
+Customer (ID: 141), tried to buy 4 tickets for The Departed, but was unable to
+Customer (ID: 145), bought 1 tickets for Fight Club
+Customer (ID: 151), bought 5 tickets for The Lion King
+Customer (ID: 153), bought 2 tickets for The Green Mile
+Customer (ID: 159), bought 1 tickets for The Shawshank Redemption
+Customer (ID: 163), bought 3 tickets for Fight Club
+Customer (ID: 164), bought 1 tickets for The Lion King
+Customer (ID: 168), tried to buy 3 tickets for The Departed, but was unable to
+Customer (ID: 169), tried to buy 3 tickets for The Departed, but was unable to
+Customer (ID: 170), bought 3 tickets for The Shawshank Redemption
+Customer (ID: 140), bought 5 tickets for The Dark Knight
+Customer (ID: 143), tried to buy 4 tickets for The Departed, but was unable to
+Customer (ID: 147), bought 5 tickets for The Matrix
+Customer (ID: 148), bought 5 tickets for The Lion King
+Customer (ID: 149), bought 4 tickets for The Matrix
+Customer (ID: 150), tried to buy 1 tickets for The Departed, but was unable to
+Customer (ID: 152), tried to buy 1 tickets for The Departed, but was unable to
+Customer (ID: 155), bought 5 discounted tickets for The Matrix
+Customer (ID: 161), bought 3 tickets for The Lion King
+Customer (ID: 162), bought 2 tickets for The Shawshank Redemption
+
+Movie named The Matrix started at 17:00 on monday in room Sala1 with 34/60 people 
+Movie named The Dark Knight started at 17:00 on monday in room Sala3 with 36/60 people 
+Movie named Fight Club started at 17:00 on monday in room Sala6 with 22/70 people 
+
+
+---------- 18:00 Monday ----------
+
+12 new customers arrived at the cinema this hour
+Customer (ID: 173), bought 4 tickets for The Green Mile
+Customer (ID: 178), bought 2 tickets for The Green Mile
+Customer (ID: 179), bought 2 tickets for Schindler's List
+Customer (ID: 180), bought 1 discounted tickets for The Shawshank Redemption
+Customer (ID: 171), tried to buy 1 tickets for The Departed, but was unable to
+Customer (ID: 172), bought 2 tickets for The Lion King
+Customer (ID: 176), bought 4 tickets for Schindler's List
+Customer (ID: 167), tried to buy 4 tickets for The Departed, but was unable to
+Customer (ID: 174), bought 1 tickets for Schindler's List
+Customer (ID: 175), bought 6 tickets for Schindler's List
+Customer (ID: 177), bought 5 tickets for Schindler's List
+Customer (ID: 181), bought 2 tickets for The Lion King
+Customer (ID: 182), bought 1 discounted tickets for The Lion King
+Customer (ID: 183), bought 3 discounted tickets for Schindler's List
+
+
+
+---------- 19:00 Monday ----------
+Ticket counter (0) stopped working 
+Ticket counter (1) stopped working 
+
+27 new customers arrived at the cinema this hour
+Customer (ID: 188), bought 6 tickets for The Green Mile
+Customer (ID: 191), bought 1 tickets for The Shawshank Redemption
+Customer (ID: 192), tried to buy 4 tickets for The Departed, but was unable to
+Customer (ID: 193), bought 2 tickets for The Lion King
+Customer (ID: 195), tried to buy 2 tickets for The Departed, but was unable to
+Customer (ID: 197), tried to buy 5 tickets for The Departed, but was unable to
+Customer (ID: 199), bought 5 discounted tickets for Schindler's List
+Customer (ID: 201), tried to buy 3 tickets for The Departed, but was unable to
+Customer (ID: 202), tried to buy 6 tickets for The Departed, but was unable to
+Customer (ID: 210), bought 6 discounted tickets for The Lion King
+Customer (ID: 185), bought 3 tickets for The Lion King
+Customer (ID: 186), tried to buy 3 tickets for The Departed, but was unable to
+Customer (ID: 190), tried to buy 1 tickets for The Departed, but was unable to
+Customer (ID: 194), bought 2 tickets for The Lion King
+Customer (ID: 198), bought 5 tickets for The Green Mile
+Customer (ID: 207), bought 5 tickets for The Shawshank Redemption
+Customer (ID: 209), tried to buy 3 tickets for The Departed, but was unable to
+Customer (ID: 211), bought 6 tickets for The Shawshank Redemption
+Customer (ID: 184), bought 6 tickets for The Shawshank Redemption
+Customer (ID: 187), bought 6 tickets for The Lion King
+Customer (ID: 189), bought 6 tickets for Schindler's List
+Customer (ID: 196), tried to buy 1 tickets for The Departed, but was unable to
+Customer (ID: 200), tried to buy 5 tickets for The Departed, but was unable to
+Customer (ID: 203), tried to buy 3 tickets for The Departed, but was unable to
+Customer (ID: 204), bought 3 tickets for The Green Mile
+Customer (ID: 205), tried to buy 5 tickets for The Departed, but was unable to
+Customer (ID: 206), tried to buy 1 tickets for The Departed, but was unable to
+Customer (ID: 208), tried to buy 4 tickets for The Departed, but was unable to
+
+Movie named The Green Mile started at 19:00 on monday in room Sala5 with 24/50 people 
+Movie named The Shawshank Redemption started at 19:00 on monday in room Sala7 with 55/70 people 
+
+
+---------- 20:00 Monday ----------
+Ticket counter (0) stopped working 
+Ticket counter (1) stopped working 
+Ticket counter (2) stopped working 
+
+20 new customers arrived at the cinema this hour
+
+Movie named The Departed started at 20:00 on monday in room Sala1 with 60/60 people 
+Movie named The Departed started at 20:00 on monday in room Sala2 with 50/50 people 
+Movie named The Lion King started at 20:00 on monday in room Sala3 with 48/60 people 
+Movie named Schindler's List started at 20:00 on monday in room Sala6 with 53/70 people 
+
+
+Cinema closed for the day.
+---------- 10:00 Tuesday ----------
+Workplace (0) started working 
+
+19 new customers arrived at the cinema this hour
+
+Movie named Forrest Gump started at 10:00 on tuesday in room Sala1 with 0/60 people 
+Movie named Inception started at 10:00 on tuesday in room Sala2 with 0/50 people 
+Movie named The Dark Knight started at 10:00 on tuesday in room Sala3 with 0/60 people 
+Movie named Schindler's List started at 10:00 on tuesday in room Sala5 with 0/50 people 
+Movie named Goodfellas started at 10:00 on tuesday in room Sala6 with 0/70 people 
+Movie named Gladiator started at 10:00 on tuesday in room Sala7 with 0/70 people 
+
+
+---------- 11:00 Tuesday ----------
+
+15 new customers arrived at the cinema this hour
+
+
+
+---------- 12:00 Tuesday ----------
+Ticket counter (0) started working 
+Ticket counter (1) started working 
+Ticket counter (2) started working 
+
+14 new customers arrived at the cinema this hour
+Customer (ID: 213), tried to buy 4 tickets for Schindler's List, but was unable to
+Customer (ID: 216), tried to buy 6 tickets for Schindler's List, but was unable to
+Customer (ID: 217), bought 1 tickets for The Lion King
+Customer (ID: 219), bought 4 tickets for The Departed
+Customer (ID: 220), bought 3 discounted tickets for The Lion King
+Customer (ID: 221), bought 4 tickets for The Departed
+Customer (ID: 226), tried to buy 6 tickets for Schindler's List, but was unable to
+Customer (ID: 234), bought 1 tickets for Gladiator
+Customer (ID: 235), tried to buy 3 tickets for Schindler's List, but was unable to
+Customer (ID: 238), bought 4 tickets for Goodfellas
+Customer (ID: 239), bought 4 tickets for The Dark Knight
+Customer (ID: 250), bought 2 tickets for Interstellar
+Customer (ID: 251), bought 2 tickets for Gladiator
+Customer (ID: 215), bought 3 tickets for The Departed
+Customer (ID: 218), bought 2 tickets for The Departed
+Customer (ID: 222), bought 2 tickets for The Departed
+Customer (ID: 227), bought 2 tickets for The Lion King
+Customer (ID: 228), bought 6 tickets for The Lion King
+Customer (ID: 229), bought 2 tickets for The Departed
+Customer (ID: 230), bought 5 tickets for The Departed
+Customer (ID: 231), bought 5 discounted tickets for The Departed
+Customer (ID: 241), bought 3 tickets for The Shawshank Redemption
+Customer (ID: 245), tried to buy 1 tickets for Forrest Gump, but was unable to
+Customer (ID: 212), bought 5 tickets for The Departed
+Customer (ID: 214), bought 5 discounted tickets for The Departed
+Customer (ID: 223), bought 5 tickets for The Departed
+Customer (ID: 224), tried to buy 2 tickets for Schindler's List, but was unable to
+Customer (ID: 225), bought 1 tickets for The Lion King
+Customer (ID: 232), bought 6 tickets for The Lion King
+Customer (ID: 233), bought 5 tickets for Gladiator
+Customer (ID: 236), bought 2 tickets for The Matrix
+Customer (ID: 237), bought 1 tickets for The Dark Knight
+Customer (ID: 240), bought 2 tickets for Saving Private Ryan
+Customer (ID: 242), bought 2 tickets for Inception
+Customer (ID: 243), bought 6 tickets for Saving Private Ryan
+Customer (ID: 244), bought 4 discounted tickets for Gladiator
+
+
+
+---------- 13:00 Tuesday ----------
+
+11 new customers arrived at the cinema this hour
+Customer (ID: 253), bought 2 tickets for Pulp Fiction
+Customer (ID: 260), bought 3 tickets for Saving Private Ryan
+Customer (ID: 264), bought 3 tickets for The Lion King
+Customer (ID: 266), bought 2 tickets for The Dark Knight
+Customer (ID: 274), bought 4 tickets for The Dark Knight
+Customer (ID: 279), bought 1 tickets for Goodfellas
+Customer (ID: 281), bought 1 discounted tickets for The Godfather
+Customer (ID: 293), bought 5 tickets for The Lion King
+Customer (ID: 294), bought 6 tickets for Saving Private Ryan
+Customer (ID: 246), bought 4 tickets for Saving Private Ryan
+Customer (ID: 247), bought 2 discounted tickets for Saving Private Ryan
+Customer (ID: 248), bought 5 tickets for The Departed
+Customer (ID: 249), bought 1 tickets for The Dark Knight
+Customer (ID: 254), bought 6 tickets for The Matrix
+Customer (ID: 256), bought 6 tickets for The Avengers
+Customer (ID: 258), bought 5 tickets for The Avengers
+Customer (ID: 259), bought 6 discounted tickets for Inception
+Customer (ID: 261), bought 4 tickets for The Lion King
+Customer (ID: 262), bought 6 tickets for The Godfather
+Customer (ID: 263), bought 6 tickets for The Matrix
+Customer (ID: 252), bought 3 tickets for Inception
+Customer (ID: 255), bought 1 tickets for Interstellar
+Customer (ID: 257), bought 5 tickets for The Avengers
+Customer (ID: 267), bought 1 discounted tickets for The Godfather
+Customer (ID: 269), bought 2 tickets for Gladiator
+Customer (ID: 277), bought 6 tickets for The Avengers
+Customer (ID: 278), bought 5 tickets for Fight Club
+Customer (ID: 282), bought 2 tickets for The Dark Knight
+Customer (ID: 285), bought 1 tickets for Pulp Fiction
+Customer (ID: 287), bought 6 tickets for Inception
+Customer (ID: 290), bought 2 tickets for The Matrix
+
+Movie named Interstellar started at 13:00 on tuesday in room Sala1 with 3/60 people 
+Movie named The Matrix started at 13:00 on tuesday in room Sala2 with 16/50 people 
+Movie named Goodfellas started at 13:00 on tuesday in room Sala3 with 5/60 people 
+Movie named The Lion King started at 13:00 on tuesday in room Sala6 with 31/70 people 
+Movie named The Avengers started at 13:00 on tuesday in room Sala7 with 0/70 people 
+
+
+---------- 14:00 Tuesday ----------
+Ticket counter (0) stopped working 
+Food counter (0) started working 
+Food counter (1) started working 
+
+12 new customers arrived at the cinema this hour
+Customer (ID: 301), bought 3 tickets for Saving Private Ryan
+Customer (ID: 303), bought 3 tickets for Fight Club
+Customer (ID: 265), bought 5 tickets for The Dark Knight
+Customer (ID: 268), bought 2 tickets for Fight Club
+Customer (ID: 270), bought 3 tickets for The Godfather
+Customer (ID: 271), bought 1 tickets for Goodfellas
+Customer (ID: 272), bought 1 tickets for The Departed
+Customer (ID: 273), bought 3 tickets for Inception
+Customer (ID: 275), bought 3 tickets for The Departed
+Customer (ID: 276), tried to buy 6 tickets for Interstellar, but was unable to
+Customer (ID: 280), bought 1 tickets for The Dark Knight
+Customer (ID: 283), bought 4 tickets for The Avengers
+Customer (ID: 284), bought 3 discounted tickets for The Dark Knight
+Customer (ID: 286), bought 6 tickets for The Departed
+Customer (ID: 291), tried to buy 5 tickets for The Departed, but was unable to
+Customer (ID: 295), bought 6 tickets for The Avengers
+Customer (ID: 298), bought 1 tickets for Gladiator
+Customer (ID: 299), bought 5 tickets for The Dark Knight
+Customer (ID: 300), bought 2 tickets for The Shawshank Redemption
+Customer (ID: 305), bought 1 tickets for The Departed
+Customer (ID: 306), tried to buy 6 tickets for The Departed, but was unable to
+Customer (ID: 307), bought 4 tickets for The Godfather
+Customer (ID: 308), bought 2 discounted tickets for The Departed
+
+Movie named Inception started at 14:00 on tuesday in room Sala5 with 20/50 people 
+
+
+---------- 15:00 Tuesday ----------
+
+25 new customers arrived at the cinema this hour
+Customer (ID: 309), bought 3 tickets for The Godfather
+Customer (ID: 310), bought 2 tickets for The Godfather
+Customer (ID: 311), bought 6 tickets for The Avengers
+Customer (ID: 319), bought 1 tickets for The Godfather
+Customer (ID: 324), bought 2 tickets for Gladiator
+Customer (ID: 330), bought 6 tickets for The Dark Knight
+Customer (ID: 331), bought 5 tickets for Pulp Fiction
+Customer (ID: 332), bought 5 tickets for The Dark Knight
+Customer (ID: 288), tried to buy 3 tickets for The Matrix, but was unable to
+Customer (ID: 289), tried to buy 3 tickets for The Lion King, but was unable to
+Customer (ID: 292), tried to buy 2 tickets for The Departed, but was unable to
+Customer (ID: 296), tried to buy 4 tickets for Inception, but was unable to
+Customer (ID: 297), bought 4 tickets for Saving Private Ryan
+Customer (ID: 302), bought 1 tickets for The Dark Knight
+Customer (ID: 304), bought 3 tickets for Saving Private Ryan
+Customer (ID: 312), bought 1 tickets for Pulp Fiction
+Customer (ID: 314), bought 5 tickets for Fight Club
+Customer (ID: 315), bought 2 tickets for Goodfellas
+Customer (ID: 317), bought 5 discounted tickets for Goodfellas
+Customer (ID: 318), bought 1 tickets for The Godfather
+Customer (ID: 320), bought 4 tickets for Gladiator
+Customer (ID: 322), bought 6 tickets for Fight Club
+Customer (ID: 323), bought 6 tickets for Saving Private Ryan
+Customer (ID: 313), bought 6 tickets for The Shawshank Redemption
+Customer (ID: 316), bought 5 tickets for Pulp Fiction
+Customer (ID: 321), bought 4 tickets for Goodfellas
+Customer (ID: 328), bought 3 tickets for Fight Club
+Customer (ID: 333), bought 1 tickets for The Dark Knight
+Customer (ID: 334), bought 4 tickets for Pulp Fiction
+
+Movie named Fight Club started at 15:00 on tuesday in room Sala6 with 0/70 people 
+
+
+---------- 16:00 Tuesday ----------
+
+15 new customers arrived at the cinema this hour
+Customer (ID: 335), bought 1 tickets for The Avengers
+Customer (ID: 338), tried to buy 2 tickets for The Departed, but was unable to
+Customer (ID: 339), bought 2 discounted tickets for The Shawshank Redemption
+Customer (ID: 343), bought 6 tickets for Fight Club
+Customer (ID: 346), bought 6 tickets for Saving Private Ryan
+Customer (ID: 348), bought 3 tickets for Fight Club
+Customer (ID: 350), bought 5 tickets for The Godfather
+Customer (ID: 325), bought 5 tickets for The Avengers
+Customer (ID: 326), bought 1 tickets for Goodfellas
+Customer (ID: 327), bought 4 tickets for Fight Club
+Customer (ID: 329), bought 4 tickets for The Avengers
+Customer (ID: 336), bought 3 tickets for The Shawshank Redemption
+Customer (ID: 341), bought 1 tickets for The Godfather
+Customer (ID: 342), bought 3 tickets for The Dark Knight
+Customer (ID: 345), bought 1 tickets for The Avengers
+Customer (ID: 347), bought 6 tickets for Fight Club
+Customer (ID: 349), bought 5 tickets for Pulp Fiction
+Customer (ID: 337), bought 4 tickets for Pulp Fiction
+Customer (ID: 340), bought 5 tickets for The Shawshank Redemption
+Customer (ID: 344), bought 5 tickets for Pulp Fiction
+
+Movie named The Dark Knight started at 16:00 on tuesday in room Sala1 with 44/60 people 
+Movie named The Godfather started at 16:00 on tuesday in room Sala2 with 28/50 people 
+Movie named The Departed started at 16:00 on tuesday in room Sala3 with 60/60 people 
+Movie named Gladiator started at 16:00 on tuesday in room Sala7 with 21/70 people 
+
+
+---------- 17:00 Tuesday ----------
+
+29 new customers arrived at the cinema this hour
+Customer (ID: 353), bought 4 tickets for Pulp Fiction
+Customer (ID: 354), bought 2 tickets for The Dark Knight
+Customer (ID: 356), bought 3 tickets for The Shawshank Redemption
+Customer (ID: 358), bought 2 tickets for Saving Private Ryan
+Customer (ID: 360), bought 3 tickets for Goodfellas
+Customer (ID: 370), bought 2 tickets for Goodfellas
+Customer (ID: 371), bought 3 discounted tickets for Pulp Fiction
+Customer (ID: 374), bought 6 discounted tickets for Fight Club
+Customer (ID: 352), bought 3 tickets for Goodfellas
+Customer (ID: 355), bought 6 tickets for Goodfellas
+Customer (ID: 359), bought 1 tickets for Goodfellas
+Customer (ID: 361), bought 1 tickets for The Shawshank Redemption
+Customer (ID: 362), bought 2 tickets for The Dark Knight
+Customer (ID: 364), bought 5 discounted tickets for Pulp Fiction
+Customer (ID: 369), bought 5 tickets for Pulp Fiction
+Customer (ID: 375), bought 6 tickets for The Dark Knight
+Customer (ID: 377), bought 1 tickets for The Avengers
+Customer (ID: 351), bought 6 tickets for The Dark Knight
+Customer (ID: 357), tried to buy 4 tickets for Saving Private Ryan, but was unable to
+Customer (ID: 363), bought 1 tickets for Pulp Fiction
+Customer (ID: 365), bought 4 tickets for Goodfellas
+Customer (ID: 366), bought 3 tickets for Goodfellas
+Customer (ID: 367), bought 5 tickets for The Avengers
+Customer (ID: 368), bought 1 tickets for Fight Club
+Customer (ID: 372), bought 5 tickets for The Shawshank Redemption
+Customer (ID: 373), bought 5 tickets for The Shawshank Redemption
+Customer (ID: 376), bought 1 tickets for The Avengers
+Customer (ID: 378), bought 4 tickets for The Shawshank Redemption
+Customer (ID: 379), bought 3 tickets for Saving Private Ryan
+Customer (ID: 380), bought 1 tickets for The Dark Knight
+
+Movie named The Dark Knight started at 17:00 on tuesday in room Sala5 with 17/50 people 
+
+
+---------- 18:00 Tuesday ----------
+
+15 new customers arrived at the cinema this hour
+Customer (ID: 382), bought 4 discounted tickets for Goodfellas
+Customer (ID: 384), bought 1 tickets for Goodfellas
+Customer (ID: 386), tried to buy 5 tickets for Saving Private Ryan, but was unable to
+Customer (ID: 391), bought 5 tickets for Goodfellas
+Customer (ID: 381), tried to buy 1 tickets for Saving Private Ryan, but was unable to
+Customer (ID: 383), bought 1 tickets for Goodfellas
+Customer (ID: 387), bought 6 tickets for The Shawshank Redemption
+Customer (ID: 390), tried to buy 3 tickets for Saving Private Ryan, but was unable to
+Customer (ID: 393), bought 2 tickets for The Shawshank Redemption
+Customer (ID: 394), tried to buy 4 tickets for Fight Club, but was unable to
+Customer (ID: 385), bought 1 tickets for The Shawshank Redemption
+Customer (ID: 388), tried to buy 2 tickets for Saving Private Ryan, but was unable to
+Customer (ID: 389), tried to buy 2 tickets for Fight Club, but was unable to
+Customer (ID: 392), bought 3 tickets for Goodfellas
+Customer (ID: 395), tried to buy 5 tickets for Saving Private Ryan, but was unable to
+Customer (ID: 396), bought 4 tickets for The Avengers
+
+Movie named The Avengers started at 18:00 on tuesday in room Sala6 with 60/70 people 
+
+
+---------- 19:00 Tuesday ----------
+Ticket counter (0) stopped working 
+Ticket counter (1) stopped working 
+
+25 new customers arrived at the cinema this hour
+Customer (ID: 400), bought 3 tickets for Pulp Fiction
+Customer (ID: 406), tried to buy 1 tickets for Fight Club, but was unable to
+Customer (ID: 416), tried to buy 1 tickets for Saving Private Ryan, but was unable to
+Customer (ID: 422), bought 6 tickets for Pulp Fiction
+Customer (ID: 397), bought 1 tickets for Goodfellas
+Customer (ID: 398), tried to buy 3 tickets for Fight Club, but was unable to
+Customer (ID: 401), tried to buy 3 tickets for Pulp Fiction, but was unable to
+Customer (ID: 402), bought 5 discounted tickets for The Shawshank Redemption
+Customer (ID: 403), tried to buy 4 tickets for Pulp Fiction, but was unable to
+Customer (ID: 405), bought 4 tickets for The Shawshank Redemption
+Customer (ID: 407), bought 3 tickets for Goodfellas
+Customer (ID: 410), bought 1 tickets for Pulp Fiction
+Customer (ID: 413), bought 2 tickets for The Shawshank Redemption
+Customer (ID: 414), bought 1 tickets for The Shawshank Redemption
+Customer (ID: 419), tried to buy 6 tickets for Pulp Fiction, but was unable to
+Customer (ID: 399), tried to buy 5 tickets for Saving Private Ryan, but was unable to
+Customer (ID: 404), tried to buy 3 tickets for Fight Club, but was unable to
+Customer (ID: 408), tried to buy 1 tickets for Fight Club, but was unable to
+Customer (ID: 409), bought 4 tickets for The Shawshank Redemption
+Customer (ID: 411), tried to buy 2 tickets for Pulp Fiction, but was unable to
+Customer (ID: 412), tried to buy 5 tickets for Saving Private Ryan, but was unable to
+Customer (ID: 415), bought 1 discounted tickets for The Shawshank Redemption
+Customer (ID: 417), tried to buy 5 tickets for Saving Private Ryan, but was unable to
+Customer (ID: 418), tried to buy 6 tickets for Pulp Fiction, but was unable to
+Customer (ID: 420), tried to buy 6 tickets for Fight Club, but was unable to
+
+Movie named Pulp Fiction started at 19:00 on tuesday in room Sala1 with 60/60 people 
+Movie named Fight Club started at 19:00 on tuesday in room Sala2 with 50/50 people 
+Movie named Goodfellas started at 19:00 on tuesday in room Sala3 with 53/60 people 
+Movie named The Shawshank Redemption started at 19:00 on tuesday in room Sala7 with 65/70 people 
+
+
+---------- 20:00 Tuesday ----------
+Ticket counter (0) stopped working 
+Ticket counter (1) stopped working 
+Ticket counter (2) stopped working 
+
+21 new customers arrived at the cinema this hour
+
+Movie named Saving Private Ryan started at 20:00 on tuesday in room Sala5 with 50/50 people 
+
+

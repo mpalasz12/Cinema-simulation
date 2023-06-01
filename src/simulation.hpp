@@ -51,4 +51,6 @@ class Simulation {
 		void stepCounters();
 		void stepMovieRooms();
 		bool closeCinemaIfNeeded();
+
+		void saveToFile(std::string path);
 };

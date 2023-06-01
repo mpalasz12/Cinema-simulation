@@ -82,3 +82,7 @@ void Workplace::closeCounter() {
 	queue.clear();
 	working = false;
 }
+
+void Workplace::clearAssigned() {
+	assignedEmployees.clear();
+}

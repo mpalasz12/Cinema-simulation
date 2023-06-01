@@ -63,7 +63,7 @@ class Worker {
 		void salaryWithoutBonus(unsigned timeWorked);
 		virtual void calculateSalary(unsigned bonus);
 		virtual void assembleSchedule(unsigned time);
-		virtual unsigned calculateBonus(unsigned performance);
+	 	virtual unsigned calculateBonus(unsigned performance);
 
 		friend std::ostream& operator<<(std::ostream& os, Worker worker);
 };

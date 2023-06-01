@@ -151,3 +151,6 @@ bool Simulation::closeCinemaIfNeeded() {
 }
 
 
+void Simulation::saveToFile(std::string path) {
+	simLog.writeStepLogToFile(path);
+}

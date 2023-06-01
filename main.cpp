@@ -59,6 +59,7 @@ int main(int argc, char *argv[])
 		std::cin >> answer;
 		if (answer == "exit") {
 			running = false;
+			sim.saveToFile("simresult.txt");
 		}
 
 

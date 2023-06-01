@@ -1,0 +1,7 @@
+nazwa1,32,worker,1,1,1,1,0,0,0
+nazwa2,32,ticketSeller,1,1,1,1,0,0,0
+nazwa3,32,ticketSeller,1,1,1,1,0,0,0
+nazwa4,32,ticketSeller,1,1,1,1,0,0,0
+nazwa5,10,foodSeller,1,1,0,0,0,0,0
+nazwa6,10,foodSeller,1,1,0,0,0,0,0
+nazwa7,10,janitor,1,1,0,0,0,0,0

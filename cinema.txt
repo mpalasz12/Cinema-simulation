@@ -1,0 +1,6 @@
+Sala1,60
+Sala2,50
+Sala3,60
+Sala5,50
+Sala6,70
+Sala7,70

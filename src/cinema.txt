@@ -1,4 +1,0 @@
-Sala1,30
-Sala2,40
-Sala3,40
-Sala4,50
