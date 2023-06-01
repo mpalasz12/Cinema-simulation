@@ -58,3 +58,17 @@
 4) Ścieżkę do pliku z miejscami pracy
 
 > Podział obowiązków do ustalenia
+
+## Realizacja symulacji:
+
+> Symulacja podzielona jest na godzinne interwały podczas których środowisko jest aktualizowane.
+
+> Cogodzinny interwał składa się z:
+
+* Aktualizacja, które miejsca pracy działają na podstawie dostępności pracowników.
+* Sprawdzenie, czy danego dnia grane są jeszcze jakieś filmy i jeżeli tak, wylosowanie liczby klientów, którzy przyjdą do kina w danej godzinie.
+* Stworzenie losowych klientów, przydzielenie im losowego filmu i losową liczbę biletów do kupienia.
+* Wylosowanie ilości obsłużonych klientów przez czynne kasy biletowe i sprzedanie im biletów, jeżeli te są dostępne.
+* Sprawdzenie, czy aktualna godzina równa jest godzinie zamknięcia kina - jeśli tak - zamknięcie kina i przejście do kolejnego dnia.
+
+> Plany pracowników i ich przydziały do kas aktualizowanie są codziennie, natomiast rozkłady - tygodniowo
