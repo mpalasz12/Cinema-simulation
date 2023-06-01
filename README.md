@@ -6,15 +6,25 @@
 
 ### Klasa ``Cinema``
 
-> Planowo klasa ``Cinema`` ma być główną klasą reprezentującą kino i zawierającą wszystkie jego składowe.
+> Planowo klasa ``Cinema`` jest główną klasą reprezentującą kino i zawierającą wszystkie jego składowe, takie jak:
 
-### Klasa ``Counter``
+* ``name`` - nazwa kina,
+* ``openingHour, closingHour`` - godziny otwarcia i zamknięcia
+* wektory zawierające miejsca pracy pracowników
+* wektor z klientami z danego dnia
 
-> Klasa ``Counter`` będzie reprezentować kasę biletową, planowo ma ona być obsługiwana przez pracownika w godzinach pracy kina, do kasy będą mogli ustawić się w kolejce klienci i kupić bilet na jeden z filmów granych w kinie
+> Sama klasa ``Cinema`` jest najbardziej złożoną klasą w całej symulacji i zawiera większość jej logiki, to tutaj tworzone są plany dnia dla pracowników, generowani losowi klienci itd.
+
+
+### Klasa ``Workplace``
+
+> Klasa ``Workplace`` reprezentuje miejsce pracy, jest ono obsługiwane przez pracownika w godzinach pracy kina, do kasy będą mogli ustawić się w kolejce klienci i kupić bilet na jeden z filmów granych w kinie
+
+> Przy czym samo kupowanie biletów jest losowe, kasa może w ciągu danej godziny obsłużyć różną ilość osób, reszta pozostanie w kolejce.
 
 ### Klasa ``Schedule``
 
-> Klasa schedule będzie reprezentowała rozkład i plan na dany tydzień oraz potencjalnie losowo generowaną popularność filmów, na podstawie której sale kinowe będą zapełniane. Jedną z funkcjonalności dodatkowych jest również generowanie rozkładu na podstawie sprzedaży biletów w minionym tygodniu.
+> Klasa schedule reprezentuje rozkład i plan na dany tydzień dla pracowników. Zawiera informacje o ich dostępności danego dnia oraz o tygodniowych godzinach pracy
 
 ### Klasa ``Movie``
 
@@ -24,7 +34,7 @@
 
 > Główna klasa ``Worker``, od której będą wychodzić klasy dotyczące poszczególnych pracowników
 
-> Będą to klasy takie jak ``Client`` oraz ``Employee`` (i dziedziczący po niej konkretni pracownicy), klienci będą kupować bilety i oglądać filmy, pracownicy z kolei będą pracować w kinie na kasach biletowych, stoiskach z jedzeniem itd.
+> Dziedziczą po niej konkretni pracownicy tacy jak sprzedawcy biletów, jedzenia oraz woźni.
 
 ### Klasa ``Screening room``
 
@@ -40,8 +50,11 @@
 
 ## Sposób uruchamiania programu.
 
-> Planowane na ten moment są dwa sposoby uruchamiania symulacji, pierwsza z nich, to bezpośrednie uruchomienie z konsoli z podaniem takich informacji jak liczba sal, pracowników, i ścieżki pliku z filmami (opcjonalne).
+> Program uruchamiany jest poprzez wywołanie go z terminala podając jako argumenty kolejno:
 
-> Kolejnym sposobem uruchomienia programu będzie podanie ścieżki do pliku, w którym będą informacje dotyczące inicjalizacji symulacji.
+1) Ścieżkę do pliku z salami kinowymi
+2) Ścieżkę do pliku z filmami
+3) Ścieżkę do pliku z pracownikami
+4) Ścieżkę do pliku z miejscami pracy
 
 > Podział obowiązków do ustalenia
