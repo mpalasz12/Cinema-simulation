@@ -16,9 +16,9 @@
 
 > Klasa schedule będzie reprezentowała rozkład i plan na dany tydzień oraz potencjalnie losowo generowaną popularność filmów, na podstawie której sale kinowe będą zapełniane. Jedną z funkcjonalności dodatkowych jest również generowanie rozkładu na podstawie sprzedaży biletów w minionym tygodniu.
 
-### Klasa ``Film``
+### Klasa ``Movie``
 
-> Klasa film reprezentować będzie.. film.
+> Klasa film reprezentować będzie.. film. Do generowania losowych filmów używamy biblioteki <random>, ponieważ posiada ona lepszą generację liczb losowych od funkcji rand() z biblioteki <cstdlib>.
 
 ### Klasy reprezentujące osoby.
 
@@ -26,9 +26,17 @@
 
 > Będą to klasy takie jak ``Client`` oraz ``Employee`` (i dziedziczący po niej konkretni pracownicy), klienci będą kupować bilety i oglądać filmy, pracownicy z kolei będą pracować w kinie na kasach biletowych, stoiskach z jedzeniem itd.
 
-### Klasa ``MovieRoom``
+### Klasa ``Screening room``
 
 > Klasa reprezentująca salę kinową. to w niej będzie wyświetlany film i w niej zasiądą klienci. Sala filmowa posiadać będzie ograniczoną liczbę miejsc.
+
+### Klasa ``Showing ``
+
+> W tej klasie przechowywane są informacje o seansie, czyli w której sali, o której godzinie, jaki film i ilość wolnych miejsc.
+
+### Klasa ``Time ``
+
+> Zawiera dzień tygodnia oraz godzinę.
 
 ## Sposób uruchamiania programu.
 
