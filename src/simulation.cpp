@@ -95,21 +95,24 @@ std::string Simulation::runStep() {
 
 	addToLog(cinema.updateWorkingCounters(time.getHour(), time.getDay()));
 
-	// get random amount of customers in range (10, 60)
-	unsigned newCustomers = generateRandomNumber(10, 30);
 	std::string log;
-	log.append(std::to_string(newCustomers));
-	log.append(" new customers arrived at the cinema this hour");
-	addToLog(log);
 
-	std::vector<std::string> movies = cinema.getNamesOfMovies(time);
+	if (cinema.areMoreFilms(time)) {
+		// get random amount of customers in range (10, 60)
+		unsigned newCustomers = generateRandomNumber(10, 30);
+		std::string log;
+		log.append(std::to_string(newCustomers));
+		log.append(" new customers arrived at the cinema this hour");
+		addToLog(log);
 
-	for (unsigned i = 0; i <= newCustomers; i++) {
-		// create the employees and get them in a random queue
-		cinema.addRandomCustomer(movies);
+		std::vector<std::string> movies = cinema.getNamesOfMovies(time);
 
+		for (unsigned i = 0; i <= newCustomers; i++) {
+			// create the employees and get them in a random queue
+			cinema.addRandomCustomer(movies);
+
+		}
 	}
-
 
 	// sell tickets and add the information to the log
 	addToLog(cinema.sellTickets(time));
